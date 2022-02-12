@@ -14,6 +14,7 @@ module.exports = {
     }
   },
   extends: [
+    'eslint:recommended',
     'plugin:react/recommended',
     'standard'
   ],
@@ -34,8 +35,7 @@ module.exports = {
     '/node_modules/**',
     '/build/**',
     '/src/setupTests.ts',
-    '/public/**',
-    '/src/serviceWorker.ts'
+    '/public/**'
   ],
   rules: {
     'no-unused-vars': [
