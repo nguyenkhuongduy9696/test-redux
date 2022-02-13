@@ -4,4 +4,12 @@
 
 body {
   font-family: "Google Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+}
+
+.btn {
+  @apply flex items-center justify-center h-full focus:outline-none;
+  padding: 7px 16px;
+  border-radius: 5px;
+  box-shadow: 0 4px 7px -1px rgba(0, 0, 0, 0.11), 0 2px 4px -1px rgba(0, 0, 0, 0.07);
 }

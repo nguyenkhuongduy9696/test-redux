@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
+import './plugins/fontawesome';
 
 import { ACCESS_TOKEN } from './constants/localStorage';
 import { AUTH_USER_INFO_KEY, CHECK_TENANT_KEY } from './constants/queryKeys';

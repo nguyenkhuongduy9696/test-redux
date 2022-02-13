@@ -1,0 +1,33 @@
+.text-gradient-primary {
+    background: -webkit-linear-gradient(120deg, #269157 0%, #2eb069 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(120deg, #3de589 0%, #2aa160 100%);
+}
+
+.vh-75 {
+    height: 75vh!important;
+}
+
+.btn-hover:hover {
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.09), 0 2px 3px -1px rgba(0, 0, 0, 0.07);
+    transform: scale(1.02);
+}
+
+.btn-hover:active,
+.btn-hover:active:focus,
+.btn-hover:active:hover {
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.09), 0 2px 3px -1px rgba(0, 0, 0, 0.07);
+    transform: scale(1);
+    opacity: 0.85;
+}
+
+.oblique {
+    transform: skewX(-10deg);
+    overflow: hidden;
+    right: -10rem;
+}
+

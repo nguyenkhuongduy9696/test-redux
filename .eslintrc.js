@@ -35,7 +35,8 @@ module.exports = {
     '/node_modules/**',
     '/build/**',
     '/src/setupTests.ts',
-    '/public/**'
+    '/public/**',
+    'babel.config.js'
   ],
   rules: {
     'no-unused-vars': [
@@ -74,6 +75,7 @@ module.exports = {
     'react/display-name': [0],
     'linebreak-style': [0, 'windows'],
     'react-hooks/exhaustive-deps': 'off',
+    'no-use-before-define': 'off',
     'import/order': [
       'error',
       {
