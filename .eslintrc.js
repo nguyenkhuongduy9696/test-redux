@@ -39,6 +39,7 @@ module.exports = {
     'babel.config.js'
   ],
   rules: {
+    'react/prop-types': 0,
     'no-unused-vars': [
       'error',
       {
@@ -48,10 +49,6 @@ module.exports = {
       }
     ],
     'react/react-in-jsx-scope': 'off',
-    'react/prop-types': [
-      2,
-      { ignore: ['children'] }
-    ],
     'react/jsx-uses-react': 2,
     'react/jsx-uses-vars': 'error',
     'react/jsx-curly-spacing': [

@@ -1,4 +1,4 @@
-// const plugin = require('tailwindcss/plugin');
+const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   future: {
@@ -51,5 +51,40 @@ module.exports = {
 
     }
   },
-  plugins: []
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '.font-11': {
+          'font-size': '11px'
+        },
+        '.font-12': {
+          'font-size': '12px'
+        },
+        '.font-13': {
+          'font-size': '13px'
+        },
+        '.font-14': {
+          'font-size': '14px'
+        },
+        '.font-15': {
+          'font-size': '15px'
+        },
+        '.font-16': {
+          'font-size': '16px'
+        },
+        '.font-17': {
+          'font-size': '17px'
+        },
+        '.font-18': {
+          'font-size': '18px'
+        },
+        '.font-19': {
+          'font-size': '19px'
+        },
+        '.font-20': {
+          'font-size': '20px'
+        }
+      });
+    })
+  ]
 };
