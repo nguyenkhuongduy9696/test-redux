@@ -1,1 +1,2 @@
 export const ACCESS_TOKEN = 'ACCESS_TOKEN';
+export const CURRENT_BRANCH = 'CURRENT_BRANCH';

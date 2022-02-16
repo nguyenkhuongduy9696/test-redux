@@ -4,7 +4,7 @@ import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import './plugins/fontawesome';
 
-import { ACCESS_TOKEN } from './constants/localStorage';
+import { ACCESS_TOKEN, CURRENT_BRANCH } from './constants/localStorage';
 import { AUTH_USER_INFO_KEY, CHECK_TENANT_KEY } from './constants/queryKeys';
 import RouterContainer from './routers/RouterContainer';
 import { authServices } from './services/authServices';
@@ -14,6 +14,7 @@ const App = () => {
   const navigate = useNavigate();
   const tenant = helperServices().getTenant();
   const token = helperServices().getCookie(ACCESS_TOKEN);
+  const branch = localStorage.getItem(CURRENT_BRANCH);
 
   const { data: tenantInfo } = useQuery(
     CHECK_TENANT_KEY,
@@ -27,7 +28,7 @@ const App = () => {
     if (tenantInfo?.status_code === 500 || tenantInfo?.meta?.status_code === 1) {
       navigate('/error/account', { replace: true });
     } else {
-      if (!token) {
+      if (!token || !branch) {
         navigate('/auth/login', { replace: true });
       }
     }

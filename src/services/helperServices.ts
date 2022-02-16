@@ -1,8 +1,14 @@
-import { getCookie as typeScriptGetCookie } from 'typescript-cookie';
+import { getCookie as typeScriptGetCookie, setCookie as typeScriptSetCookie } from 'typescript-cookie';
 
 export const helperServices = () => {
   const getCookie = (name: string) => {
     return typeScriptGetCookie(name);
+  };
+
+  const setCookie = (name: string, value: string, expires: any) => {
+    if (value) {
+      typeScriptSetCookie(name, value, { expires: expires / 3600 });
+    }
   };
 
   const getTenant = () => {
@@ -13,5 +19,5 @@ export const helperServices = () => {
     return tenant;
   };
 
-  return { getCookie, getTenant };
+  return { getCookie, getTenant, setCookie };
 };

@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import './assets/css/main.css';
 import './assets/css/custom.css';
 import App from './App';
+import ToastAppContainer from './common/ToastContainer';
 
 const queryCache = new QueryClient({
   defaultOptions: {
@@ -22,6 +23,7 @@ ReactDOM.render(
   <QueryClientProvider client={ queryCache }>
     <BrowserRouter>
       <App />
+      <ToastAppContainer />
     </BrowserRouter>
   </QueryClientProvider>,
   document.getElementById('root')

@@ -11,5 +11,10 @@ export const authServices = () => {
     return data;
   };
 
-  return { checkTenant, getUserInfo };
+  const login = async (params: object) => {
+    const { data } = await privateAxios.post('/auth/login', { ...params });
+    return data;
+  };
+
+  return { checkTenant, getUserInfo, login };
 };

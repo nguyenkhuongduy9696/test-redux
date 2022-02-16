@@ -9,7 +9,8 @@ interface ButtonProps extends React.ComponentPropsWithoutRef<'input'> {
     baseInputClassName?: string,
     inputWrapperClassName?: string,
     inputClassName?: string,
-    label?: string
+    errors?: any,
+    name?: string,
 }
 
 const BaseInput = React.forwardRef<HTMLInputElement, ButtonProps>((
@@ -21,14 +22,15 @@ const BaseInput = React.forwardRef<HTMLInputElement, ButtonProps>((
     baseInputClassName = '',
     inputWrapperClassName = '',
     inputClassName = '',
-    label,
+    children,
+    name = '',
+    errors,
     ...props
   }, ref
 ) => {
   return (
     <div className={ `mb-3 ${baseInputClassName}` }>
-      { label && <label className='font-bold font-13'>{ label }</label> }
-      <div className={ `mt-1.5 px-2 py-1.5 border rounded-md flex items-center input-wrapper ${inputWrapperClassName}` }>
+      <div className={ `mt-1.5 px-2 py-1.5 border rounded-md flex items-center input-wrapper ${errors?.[name] && 'form-error'} ${inputWrapperClassName}` }>
         {
           iconLeft && iconLeft.map((item: {icon: any, onClick: any}, index: number) => {
             return (
@@ -39,7 +41,7 @@ const BaseInput = React.forwardRef<HTMLInputElement, ButtonProps>((
             );
           })
         }
-        <input { ...props } type={ inputType } placeholder={ placeholder } ref={ ref }
+        <input { ...props } type={ inputType } placeholder={ placeholder } name={ name } ref={ ref }
           className={ `w-full focus:outline-none px-2 ${inputClassName}` }
         />
         {
@@ -53,6 +55,7 @@ const BaseInput = React.forwardRef<HTMLInputElement, ButtonProps>((
           })
         }
       </div>
+      { children }
     </div>
   );
 });

@@ -35,8 +35,7 @@ module.exports = {
     '/node_modules/**',
     '/build/**',
     '/src/setupTests.ts',
-    '/public/**',
-    'babel.config.js'
+    '/public/**'
   ],
   rules: {
     'react/prop-types': 0,

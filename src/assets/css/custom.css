@@ -13,3 +13,20 @@
     overflow: hidden;
     right: -10rem;
 }
+
+.custom-toast svg {
+    fill: #fff;
+}
+
+.flex-0-0-auto {
+    flex: 0 0 auto;
+}
+.flex-1-1-auto {
+    flex: 1 1 auto;
+}
+
+.w-300 {
+    width: 300px;
+}
+
+

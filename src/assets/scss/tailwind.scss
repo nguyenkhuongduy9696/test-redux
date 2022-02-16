@@ -14,22 +14,38 @@ body {
   border-radius: 5px;
   box-shadow: 0 4px 7px -1px rgba(0, 0, 0, 0.11), 0 2px 4px -1px rgba(0, 0, 0, 0.07);
 }
-.btn:hover {
+.btn:not(.btn-dropdown):hover {
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.09), 0 2px 3px -1px rgba(0, 0, 0, 0.07);
   transform: scale(1.02);
 }
-.btn:active,
-.btn:active:focus,
-.btn:active:hover {
+.btn:not(.btn-dropdown):active,
+.btn:not(.btn-dropdown):active:focus,
+.btn:not(.btn-dropdown):active:hover {
   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.09), 0 2px 3px -1px rgba(0, 0, 0, 0.07);
   transform: scale(1);
   opacity: 0.85;
 }
 
+.btn-primary {
+  @apply bg-primary-500 hover:bg-primary-600 text-white cursor-pointer
+}
+.btn-gray {
+  @apply bg-gray-500 hover:bg-gray-600 text-white cursor-pointer
+}
+
 /*Custom input*/
-.input-wrapper:focus-within {
+.input-wrapper:not(.form-error):focus-within {
   @apply border-primary-500;
 }
-.input-wrapper:focus-within .input-icon {
+.input-wrapper:not(.form-error):focus-within .input-icon {
   @apply text-primary-500
+}
+.input-wrapper.form-error {
+  @apply border-pink-600
+}
+.input-wrapper.form-error .input-icon {
+  @apply text-pink-600
+}
+.input-error {
+  @apply text-pink-600 font-13
 }
