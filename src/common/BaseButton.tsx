@@ -3,30 +3,30 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface buttonType {
-    className: string,
-    disableClassName: string,
-    enable: boolean,
-    onClick: any,
-    title: string,
-    titleClassName: string,
-    iconLeft: any,
-    iconLeftClassName: string,
-    iconRight: any,
-    iconRightClassName: string,
-    children: any
+    className?: string,
+    disableClassName?: string,
+    enable?: boolean,
+    onClick?: any,
+    title?: string,
+    titleClassName?: string,
+    iconLeft?: any,
+    iconLeftClassName?: string,
+    iconRight?: any,
+    iconRightClassName?: string,
+    children?: any
 }
 
 const BaseButton = ({
   className,
   disableClassName = 'btn-gray',
   onClick = null,
-  enable,
+  enable = true,
   title,
   titleClassName,
   iconLeft,
-  iconLeftClassName,
+  iconLeftClassName = 'mr-2',
   iconRight,
-  iconRightClassName,
+  iconRightClassName = 'ml-2',
   children,
   ...props
 } : buttonType) => {

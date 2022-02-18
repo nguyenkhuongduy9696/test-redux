@@ -21,7 +21,7 @@ body {
 
 /*Custom btn*/
 .btn {
-  @apply flex items-center justify-center h-full focus:outline-none;
+  @apply flex items-center justify-center focus:outline-none;
   padding: 7px 16px;
   border-radius: 5px;
   box-shadow: 0 4px 7px -1px rgba(0, 0, 0, 0.11), 0 2px 4px -1px rgba(0, 0, 0, 0.07);
@@ -105,5 +105,17 @@ body {
 }
 .k-animation-container .k-popup.k-list .k-list-optionlabel.k-selected {
   background-color: var(--nv-primary);
+}
+.k-animation-container .k-popup.k-list .k-list-filter .k-searchbox.k-input {
+  border-color: #ced4da;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+.k-animation-container .k-popup.k-list .k-list-filter .k-searchbox.k-input input.k-input-inner {
+  padding: 0.375rem;
+}
+.k-animation-container .k-popup.k-list .k-list-filter .k-searchbox.k-input:focus-within {
+  box-shadow: none;
 }
 

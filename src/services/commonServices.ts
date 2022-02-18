@@ -2,10 +2,18 @@ import { useRecoilValue } from 'recoil';
 import { permissionsState } from 'store/atoms/commonState';
 
 export const commonServices = () => {
-  const permissions = useRecoilValue(permissionsState);
+  const permissions = useRecoilValue<any>(permissionsState);
 
   const checkViewPermissions = (id: number) => {
-    console.log(permissions, id);
+    if (permissions.length === 0) {
+      return true;
+    }
+    const index = permissions.findIndex((item: any) => item.id === id);
+    if (index !== -1) {
+      return permissions[index].is_view === 1;
+    } else {
+      return false;
+    }
   };
 
   return { checkViewPermissions };
