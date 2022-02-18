@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #c1c1c1;
+}
+::-webkit-scrollbar-track {
+  padding: 6px;
+}
+
 body {
   font-family: "Google Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
@@ -25,7 +37,6 @@ body {
   transform: scale(1);
   opacity: 0.85;
 }
-
 .btn-primary {
   @apply bg-primary-500 hover:bg-primary-600 text-white cursor-pointer
 }
@@ -49,3 +60,50 @@ body {
 .input-error {
   @apply text-pink-600 font-13
 }
+
+/*Custom icon button*/
+.icon-button {
+  @apply p-2 rounded-full h-6 w-6 hover:bg-gray-200 text-gray-500 flex items-center justify-center cursor-pointer;
+}
+
+/*Custom kendo react dropdown*/
+.dropdown-wrapper:not(.form-error):focus-within {
+  @apply border-primary-500;
+}
+.dropdown-wrapper:not(.form-error):focus-within .input-icon {
+  @apply text-primary-500
+}
+.dropdown-wrapper.form-error {
+  @apply border-pink-600
+}
+.dropdown-wrapper.form-error .input-icon {
+  @apply text-pink-600
+}
+.k-dropdownlist.k-picker {
+  border-width: 0;
+  background-color: inherit;
+  font-family: "Google Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+}
+.k-dropdownlist.k-picker:hover {
+  background-color: inherit;
+}
+.k-dropdownlist.k-picker:focus-within {
+  box-shadow: none;
+}
+.k-dropdownlist .k-input-inner {
+  padding: 0 0.25rem!important;
+}
+
+/*Custom kendo react dropdown popup*/
+.k-animation-container .k-popup.k-list {
+  font-family: "Google Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+}
+.k-animation-container .k-popup.k-list .k-list-item.k-selected {
+  background-color: var(--nv-primary);
+}
+.k-animation-container .k-popup.k-list .k-list-optionlabel.k-selected {
+  background-color: var(--nv-primary);
+}
+

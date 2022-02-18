@@ -11,9 +11,9 @@ interface propTypes {
 }
 
 const InputLabel = ({
-  wrapperClassName,
+  wrapperClassName = '',
   label,
-  required,
+  required = false,
   tooltip,
   children
 } : propTypes) => {

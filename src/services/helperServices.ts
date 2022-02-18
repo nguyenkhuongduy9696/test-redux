@@ -1,4 +1,4 @@
-import { getCookie as typeScriptGetCookie, setCookie as typeScriptSetCookie } from 'typescript-cookie';
+import { getCookie as typeScriptGetCookie, setCookie as typeScriptSetCookie, removeCookie as typeScriptRemoveCookie } from 'typescript-cookie';
 
 export const helperServices = () => {
   const getCookie = (name: string) => {
@@ -7,8 +7,12 @@ export const helperServices = () => {
 
   const setCookie = (name: string, value: string, expires: any) => {
     if (value) {
-      typeScriptSetCookie(name, value, { expires: expires / 3600 });
+      typeScriptSetCookie(name, value, { expires: expires, path: '/' });
     }
+  };
+
+  const removeCookie = (name: string, path = '/') => {
+    typeScriptRemoveCookie(name, { path: path });
   };
 
   const getTenant = () => {
@@ -19,5 +23,5 @@ export const helperServices = () => {
     return tenant;
   };
 
-  return { getCookie, getTenant, setCookie };
+  return { getCookie, getTenant, setCookie, removeCookie };
 };

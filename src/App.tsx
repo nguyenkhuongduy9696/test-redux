@@ -3,12 +3,13 @@ import React, { useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import './plugins/fontawesome';
+import RouteContainer from 'routers/RouteContainer';
+import { authServices } from 'services/authServices';
+import { helperServices } from 'services/helperServices';
 
 import { ACCESS_TOKEN, CURRENT_BRANCH } from './constants/localStorage';
 import { AUTH_USER_INFO_KEY, CHECK_TENANT_KEY } from './constants/queryKeys';
-import RouterContainer from './routers/RouterContainer';
-import { authServices } from './services/authServices';
-import { helperServices } from './services/helperServices';
+import '@progress/kendo-theme-bootstrap/dist/all.css';
 
 const App = () => {
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ const App = () => {
 
   return (
     <>
-      <RouterContainer />
+      <RouteContainer />
     </>
   );
 };
