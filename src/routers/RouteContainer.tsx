@@ -4,7 +4,6 @@ import Login from 'components/auth/Login';
 import Error404 from 'components/errors/Error404';
 import NotPermission from 'components/errors/NotPermission';
 import TenantError from 'components/errors/TenantError';
-import Sidebar from 'components/layout/Sidebar';
 import { useIsFetching, useQueryClient } from 'react-query';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
@@ -39,22 +38,16 @@ const RouteContainer = () => {
   }, [isFetching]);
 
   return (
-    <>
-      <div className="w-full flex flex-row">
-        <Sidebar />
-        <div className="main-container w-full flex-1-1-auto">
-          <Routes>
-            <Route path='/error/account' element={ <TenantError /> } />
-            <Route path='/error/not-permission' element={ <NotPermission /> } />
-            <Route path='/auth/login' element={ <Login /> } />
-            <Route path='/' element={ <RequireAuth is_view={ true }>
-              <DashboardScreen />
-            </RequireAuth> } />
-            <Route path='*' element={ <Error404 /> } />
-          </Routes>
-        </div>
-      </div>
-    </>
+    <Routes>
+      <Route path='/error/account' element={ <TenantError /> } />
+      <Route path='/error/not-permission' element={ <NotPermission /> } />
+      <Route path='/auth/login' element={ <Login /> } />
+      <Route path='/' element={ <RequireAuth is_view={ true }>
+        <DashboardScreen />
+      </RequireAuth> } />
+      <Route path='*' element={ <Error404 /> } />
+    </Routes>
+
   );
 };
 

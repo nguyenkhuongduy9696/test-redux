@@ -1,19 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
+import { menu } from 'routers/menu';
+import { sidebarCollapsed } from 'store/atoms/commonState';
 
 import Avatar from 'assets/images/avatar.jpg';
 import Logo from 'assets/images/logo-crm.jpg';
-
-import { menu } from '../../routers/menu';
+import LogoMini from 'assets/images/logo-mini.png';
+import { SIDEBAR_COLLAPSE } from 'constants/localStorage';
 
 const Sidebar = React.memo(() => {
+  const collapsed = useRecoilValue(sidebarCollapsed);
+
+  useEffect(() => {
+    localStorage.setItem(SIDEBAR_COLLAPSE, collapsed ? '1' : '0');
+  }, [collapsed]);
+
   return (
-    <nav className="sidebar sidebar-offcanvas flex-0-0-auto" id="sidebar">
-      <div className="sidebar-brand-wrapper hidden lg:flex items-center justify-center">
+    <nav className={ `sidebar sidebar-offcanvas flex-0-0-auto ${collapsed ? 'collapse-sidebar' : ''}` } id="sidebar">
+      <div className="sidebar-brand-wrapper flex items-center justify-center">
         <a className="sidebar-brand brand-logo" href="/"><img src={ Logo } alt="logo"/></a>
-        <a className="sidebar-brand brand-logo-mini" href="/"><span>N</span></a>
+        <a className="sidebar-brand brand-logo-mini hidden" href="/"><img src={ LogoMini } alt="logo"/></a>
       </div>
       <ul className="nav">
         <li className="nav-item profile">
@@ -38,22 +47,23 @@ const Sidebar = React.memo(() => {
             return (
               <li className="nav-item menu-items" key={ index }>
                 <Link to={ item.subMenu.length > 0 ? '#' : item.path } >
-                  <p className="nav-link">
-                    <span className="menu-icon">
+                  <p className="nav-link parent-link">
+                    <span className="menu-icon parent-icon">
                       <FontAwesomeIcon icon={ item.icon } />
                     </span>
-                    <span className="menu-title cursor-pointer">{ item.title }</span>
-                    {
-                      item.subMenu.length > 0 &&
-                      <span className="menu-arrow cursor-pointer">
-                        <FontAwesomeIcon icon='chevron-down' />
-                      </span>
-                    }
+                    <span className="menu-title cursor-pointer parent-title">{ item.title }</span>
+                    {/* { */}
+                    {/*  item.subMenu.length > 0 && */}
+                    {/*  <span className="menu-arrow cursor-pointer"> */}
+                    {/*    <FontAwesomeIcon icon='chevron-down' /> */}
+                    {/*  </span> */}
+                    {/* } */}
                   </p>
                 </Link>
                 {
-                  item.subMenu.length > 0 &&
-                    <div className="collapse" id="ui-basic">
+                  item.subMenu.length > 0
+                    ? <div className="collapse" id="ui-basic">
+                      <p className='px-4 pt-4 pb-0 font-bold single-menu-collapse'>{item.title}</p>
                       <ul className="nav flex-column sub-menu">
                         {
                           item.subMenu.map((i: any) => {
@@ -72,6 +82,11 @@ const Sidebar = React.memo(() => {
                           })
                         }
                       </ul>
+                    </div>
+                    : <div className="collapse single-menu-collapse" id="ui-basic">
+                      <Link to={ item.path } >
+                        <p className='px-4 py-2 font-bold hover:text-primary-500'>{item.title}</p>
+                      </Link>
                     </div>
                 }
               </li>

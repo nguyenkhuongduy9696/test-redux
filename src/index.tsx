@@ -6,6 +6,8 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter } from 'react-router-dom';
 import 'assets/css/main.css';
 import 'assets/css/custom.css';
+import 'assets/css/sidebar.css';
+import 'assets/css/navbar.css';
 import { RecoilRoot } from 'recoil';
 
 import App from './App';
