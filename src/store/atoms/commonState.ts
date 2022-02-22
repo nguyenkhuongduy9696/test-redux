@@ -18,3 +18,8 @@ export const sidebarCollapsed = atom({
   key: 'sidebarCollapsed',
   default: collapseState === '1'
 });
+
+export const currentMenuId = atom({
+  key: 'currentMenuId',
+  default: 1
+});

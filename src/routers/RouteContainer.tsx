@@ -21,7 +21,7 @@ const RouteContainer = () => {
   const setPermissionState = useSetRecoilState(permissionsState);
   const setBranchesState = useSetRecoilState(branchesState);
   const queryClient = useQueryClient();
-  const data : any = queryClient.getQueryData(AUTH_USER_INFO_KEY);
+  const data:any = queryClient.getQueryData(AUTH_USER_INFO_KEY);
 
   useEffect(() => {
     if (data && data?.data) {
