@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,7 +15,7 @@ import { helperServices } from 'services/helperServices';
 
 import RightBackground from 'assets/images/login-bg.jpg';
 import { ACCESS_TOKEN, CURRENT_BRANCH } from 'constants/localStorage';
-import { AUTH_USER_INFO_KEY } from 'constants/queryKeys';
+import { AUTH_USER_INFO_KEY } from 'constants/queryKeys/commonQueryKeys';
 
 type inputs = {
   username: string,

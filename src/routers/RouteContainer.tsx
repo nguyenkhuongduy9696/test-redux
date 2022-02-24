@@ -10,9 +10,9 @@ import { useSetRecoilState } from 'recoil';
 import { branchesState, permissionsState } from 'store/atoms/commonState';
 
 import { CURRENT_BRANCH } from 'constants/localStorage';
+import { AUTH_USER_INFO_KEY } from 'constants/queryKeys/commonQueryKeys';
 
-import { AUTH_USER_INFO_KEY } from '../constants/queryKeys';
-import { DashboardScreen } from './lazyLoad';
+import { DashboardScreen, LeadScreen } from './lazyLoad';
 import RequireAuth from './RequireAuth';
 
 const RouteContainer = () => {
@@ -42,8 +42,11 @@ const RouteContainer = () => {
       <Route path='/error/account' element={ <TenantError /> } />
       <Route path='/error/not-permission' element={ <NotPermission /> } />
       <Route path='/auth/login' element={ <Login /> } />
-      <Route path='/' element={ <RequireAuth is_view={ true }>
+      <Route path='/' element={ <RequireAuth is_view={ true } title='Tổng quan'>
         <DashboardScreen />
+      </RequireAuth> } />
+      <Route path='/admin/lead/lead' element={ <RequireAuth is_view={ true } title='Lead'>
+        <LeadScreen />
       </RequireAuth> } />
       <Route path='*' element={ <Error404 /> } />
     </Routes>

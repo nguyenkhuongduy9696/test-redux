@@ -1,5 +1,5 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCopyright } from '@fortawesome/free-regular-svg-icons';
+import { faCopyright, faEnvelope as farEnvelope } from '@fortawesome/free-regular-svg-icons';
 import {
   faUser, faLock, faCircleInfo, faLocationDot, faHouse, faChevronDown, faBullhorn, faComments,
   faEnvelope, faThumbsUp, faUsersCog, faFileWord, faList, faUsers, faCogs, faPhoneSquare,
@@ -8,7 +8,7 @@ import {
   faDollyFlatbed, faHandHoldingDollar, faBox, faFileContract, faReplyAll, faCartArrowDown,
   faUserFriends, faChalkboardTeacher, faTruck, faUserTie, faCoins, faDollarSign, faChartBar,
   faChartLine, faCalendarCheck, faBoxTissue, faDownload, faBars, faCaretDown, faUserCircle,
-  faRightFromBracket
+  faRightFromBracket, faCog, faPrint, faGift, faMoneyBill, faLayerGroup, faChevronRight
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -19,5 +19,5 @@ library.add(
   faDollyFlatbed, faHandHoldingDollar, faBox, faFileContract, faReplyAll, faCartArrowDown,
   faUserFriends, faChalkboardTeacher, faTruck, faUserTie, faCoins, faDollarSign, faChartBar,
   faChartLine, faCalendarCheck, faBoxTissue, faDownload, faBars, faCaretDown, faUserCircle,
-  faRightFromBracket
+  faRightFromBracket, faCog, faPrint, farEnvelope, faGift, faMoneyBill, faLayerGroup, faChevronRight
 );

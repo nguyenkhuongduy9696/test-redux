@@ -26,7 +26,7 @@ export const menu = [
     title: 'Chiến dịch',
     path: '/admin/contact',
     subMenu: [
-      { id: 300, subIcon: 'users', subTitle: 'Lead', subPath: '/admin/contact/contact' },
+      { id: 300, subIcon: 'users', subTitle: 'Lead', subPath: '/admin/lead/lead' },
       { id: 303, subIcon: 'cogs', subTitle: 'Nhiệm vụ - kết quả', subPath: '/admin/setting/main-setting#tab-config-result' },
       { id: 305, subIcon: 'phone-square', subTitle: 'Telesales', subPath: '/admin/telesales/telesales' },
       { id: 302, subIcon: 'clipboard-check', subTitle: 'Chiến dịch', subPath: '/admin/campaign/campaign' },

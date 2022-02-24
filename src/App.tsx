@@ -7,8 +7,9 @@ import RouteContainer from 'routers/RouteContainer';
 import { authServices } from 'services/authServices';
 import { helperServices } from 'services/helperServices';
 
+import { AUTH_USER_INFO_KEY, CHECK_TENANT_KEY } from 'constants/queryKeys/commonQueryKeys';
+
 import { ACCESS_TOKEN, CURRENT_BRANCH } from './constants/localStorage';
-import { AUTH_USER_INFO_KEY, CHECK_TENANT_KEY } from './constants/queryKeys';
 import '@progress/kendo-theme-bootstrap/dist/all.css';
 
 const App = () => {

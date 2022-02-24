@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import BaseButton from 'common/BaseButton';
 import { useNavigate } from 'react-router-dom';
 
 const Error404 = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = 'Không tìm thấy trang';
+  }, []);
 
   return (
     <div className='w-screen h-screen flex flex-col justify-center items-center pb-12'>

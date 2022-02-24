@@ -1,6 +1,8 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
-import { ACCESS_TOKEN } from '../../constants/localStorage';
+import { ACCESS_TOKEN } from 'constants/localStorage';
+
 import { helperServices } from '../helperServices';
 
 export const privateAxios = axios.create({
@@ -16,13 +18,18 @@ privateAxios.interceptors.request.use(configs => {
   return configs;
 },
 error => {
-  console.log('Request error' + error);
-  // return Promise.reject(error);
+  toast.error(error);
+  return Promise.reject(error);
 });
 
 privateAxios.interceptors.response.use(response => {
   return response;
 },
 error => {
-  console.log('Reponse error' + error);
+  if (error.response?.status === 401) {
+    toast.error(error);
+    helperServices().removeCookie(ACCESS_TOKEN);
+    window.location.replace('/auth/login');
+  }
+  return Promise.reject(error);
 });

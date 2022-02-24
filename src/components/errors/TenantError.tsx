@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const TenantError = () => {
+  useEffect(() => {
+    document.title = 'Lỗi tài khoản khách hàng';
+  }, []);
   return (
     <div className='w-screen h-screen flex flex-col justify-center items-center pb-12'>
       <p className='text-8xl mb-2 text-gradient-primary'>Oops!</p>

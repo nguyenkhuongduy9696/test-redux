@@ -89,7 +89,7 @@ const Sidebar = React.memo(({ data } : {data: any}) => {
                             item.subMenu.map((i: any) => {
                               return (
                                 <Link to={ i.subPath } key={ i.id } >
-                                  <p className="nav-link sub">
+                                  <p className={ `nav-link sub ${i.subPath === location.pathname ? 'menu-active' : ''}` }>
                                     <span className="menu-icon">
                                       <FontAwesomeIcon icon={ i.subIcon } />
                                     </span>
