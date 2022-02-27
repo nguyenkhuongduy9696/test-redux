@@ -5,7 +5,7 @@ import { Fade } from '@progress/kendo-react-animation';
 import useOnClickOutSide from '../hook/usOnClickOutSide';
 
 // eslint-disable-next-line no-unused-vars
-const Dropdown = React.memo(({ children, ...props }) => {
+const Dropdown = React.memo(({ children, position = 'right', ...props } : { children: any, position?: string}) => {
   const child = Children.toArray(children);
   const ref = useRef(null);
   const [show, setShow] = useState(false);
@@ -18,7 +18,7 @@ const Dropdown = React.memo(({ children, ...props }) => {
         { child[0] }
       </div>
       <Fade transitionEnterDuration={ 200 } transitionExitDuration={ 100 }>
-        { show ? <div className="dropdown-container"> { child[1] } </div> : null }
+        { show ? <div className={ `dropdown-container ${position === 'right' ? 'right-0' : 'left-0'}` }> { child[1] } </div> : null }
       </Fade>
     </div>
   );

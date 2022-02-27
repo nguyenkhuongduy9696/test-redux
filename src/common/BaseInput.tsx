@@ -19,8 +19,8 @@ const BaseInput = React.forwardRef<HTMLInputElement, ButtonProps>((
     iconLeft,
     iconRight,
     inputType = 'text',
-    baseInputClassName = '',
-    inputWrapperClassName = '',
+    baseInputClassName = 'mb-3',
+    inputWrapperClassName = 'mt-1.5 px-2 py-1.5 border rounded-md',
     inputClassName = '',
     children,
     name = '',
@@ -29,8 +29,8 @@ const BaseInput = React.forwardRef<HTMLInputElement, ButtonProps>((
   }, ref
 ) => {
   return (
-    <div className={ `mb-3 ${baseInputClassName}` }>
-      <div className={ `mt-1.5 px-2 py-1.5 border rounded-md flex items-center input-wrapper ${errors?.[name] && 'form-error'} ${inputWrapperClassName}` }>
+    <div className={ `${baseInputClassName}` }>
+      <div className={ `${inputWrapperClassName} flex items-center input-wrapper ${errors?.[name] && 'form-error'}` }>
         {
           iconLeft && iconLeft.map((item: {icon: any, onClick: any}, index: number) => {
             return (
@@ -42,7 +42,7 @@ const BaseInput = React.forwardRef<HTMLInputElement, ButtonProps>((
           })
         }
         <input { ...props } type={ inputType } placeholder={ placeholder } name={ name } ref={ ref }
-          className={ `w-full focus:outline-none px-2 ${inputClassName}` }
+          className={ `${inputClassName} w-full focus:outline-none px-2` }
         />
         {
           iconRight && iconLeft.map((item: {icon: any, onClick: any}, index: number) => {

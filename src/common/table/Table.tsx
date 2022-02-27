@@ -179,20 +179,28 @@ const Table = ({
     );
   };
 
+  const DetailContent = () => {
+    return (
+      <div style={ { width: gridCurrent - 10 } }>
+        { detail }
+      </div>
+    );
+  };
+
   return (
     <Grid ref={ refGrid } data={ dataTable }
       skip={ pageable ? paging.skip * paging.take - paging.take : undefined }
       take={ pageable ? paging.take : null }
       total={ pageable ? data.meta.pagination.total : data.data ? data.data.length : 0 }
       pageable={ pageable }
-      resizable={ true }
+      resizable={ false }
       reorderable={ true }
       onPageChange={ (event) => handlePaging(event) }
       expandField="expanded"
       selectedField="checked"
       onSelectionChange={ selectionChange }
       onHeaderSelectionChange={ headerSelectionChange }
-      detail={ detail }
+      detail={ DetailContent }
       style={ { maxHeight: 'calc(100vh - 150px)' } }
     >
       {

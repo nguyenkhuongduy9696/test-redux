@@ -69,7 +69,7 @@ const NavBar = React.memo(({ data } : {data: any}) => {
             <div className="cursor-pointer border-r pr-4 hover:text-primary-500 ml-4" title='Thiết lập chung'>
               <span><FontAwesomeIcon icon='cog' size='lg' /></span>
             </div>
-            <ul style={ { width: '13rem' } }>
+            <ul style={ { width: '13rem' } } className='py-3'>
               {
                 menuSetting.map((item: any) => {
                   return (
@@ -96,7 +96,7 @@ const NavBar = React.memo(({ data } : {data: any}) => {
                 </div>
               </div>
             </div>
-            <ul>
+            <ul className='py-3'>
               <li className="flex items-center w-auto">
                 <div className="w-7">
                   <FontAwesomeIcon icon='user-circle' />

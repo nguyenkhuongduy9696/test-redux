@@ -22,27 +22,27 @@ body {
 
 /*Custom btn*/
 .btn {
-  @apply flex items-center justify-center focus:outline-none;
+  @apply bg-white flex items-center justify-center focus:outline-none;
   padding: 7px 16px;
   border-radius: 5px;
-  box-shadow: 0 4px 7px -1px rgba(0, 0, 0, 0.11), 0 2px 4px -1px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 4px 7px -2px rgba(0, 0, 0, 0.11), 0 2px 4px -5px rgba(0, 0, 0, 0.07);
 }
 .btn:not(.btn-dropdown):hover {
-  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.09), 0 2px 3px -1px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.09), 0 2px 3px -5px rgba(0, 0, 0, 0.07);
   transform: scale(1.02);
 }
 .btn:not(.btn-dropdown):active,
 .btn:not(.btn-dropdown):active:focus,
 .btn:not(.btn-dropdown):active:hover {
-  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.09), 0 2px 3px -1px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.09), 0 2px 3px -5px rgba(0, 0, 0, 0.07);
   transform: scale(1);
   opacity: 0.85;
 }
 .btn-primary {
-  @apply bg-primary-500 hover:bg-primary-600 text-white cursor-pointer
+  @apply border text-primary-500 hover:text-primary-600 cursor-pointer
 }
 .btn-gray {
-  @apply bg-gray-500 hover:bg-gray-600 text-white cursor-pointer
+  @apply border text-gray-500 hover:text-gray-600 cursor-pointer
 }
 
 /*Custom input*/
@@ -83,7 +83,7 @@ body {
 .k-dropdownlist.k-picker {
   border-width: 0;
   background-color: inherit;
-  font-family: "Google Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Roboto,sans-serif;
   font-size: 14px;
 }
 .k-dropdownlist.k-picker:hover {
@@ -98,7 +98,7 @@ body {
 
 /*Custom kendo react dropdown popup*/
 .k-animation-container .k-popup.k-list {
-  font-family: "Google Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: Roboto,sans-serif;
   font-size: 14px;
 }
 .k-animation-container .k-popup.k-list .k-list-item.k-selected {

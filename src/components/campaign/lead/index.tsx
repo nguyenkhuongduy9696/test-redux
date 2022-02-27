@@ -11,6 +11,7 @@ import { leadFilterParamState, leadPageLimitState, leadSelectedTableState } from
 import { leadColumnTableSelector } from 'store/selectors/campaign/lead';
 
 import DetailContent from './detail/DetailContent';
+import LeadScreenFilter from './filters';
 
 const LeadScreen = () => {
   const pageLimit = useRecoilValue(leadPageLimitState);
@@ -37,9 +38,10 @@ const LeadScreen = () => {
   return (
     <>
       <div className="w-full p-2 lg:p-4">
+        <LeadScreenFilter />
         <Table selectedState={ leadSelectedTableState } columnSelector={ leadColumnTableSelector }
           data={ data } paging={ pagination } setPaging={ setPagination }
-          detail={ DetailContent }/>
+          detail={ <DetailContent /> }/>
       </div>
     </>
   );

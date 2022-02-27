@@ -39,6 +39,10 @@
     display: none;
 }
 
+.k-widget.k-grid .k-grid-table .k-detail-row .k-detail-cell {
+    padding: 0
+}
+
 .k-widget.k-grid th.k-state-selected, .k-widget.k-grid td.k-state-selected, .k-widget.k-grid tr.k-state-selected > td {
     color: var(--nv-text-primary);
     background-color: #00000014;
@@ -109,7 +113,6 @@
     color: var(--nv-text-primary);
     border-radius: 3px;
     margin: 0 2px;
-    transition: all 200ms ease;
 }
 
 .k-widget.k-grid .k-pager-wrap .k-pager-nav.k-link:hover {

@@ -19,7 +19,7 @@ privateAxios.interceptors.request.use(configs => {
 },
 error => {
   toast.error(error);
-  return Promise.reject(error);
+  // return Promise.reject(error);
 });
 
 privateAxios.interceptors.response.use(response => {
@@ -31,5 +31,5 @@ error => {
     helperService().removeCookie(ACCESS_TOKEN);
     window.location.replace('/auth/login');
   }
-  return Promise.reject(error);
+  // return Promise.reject(error);
 });

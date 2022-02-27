@@ -8,7 +8,7 @@ import {
   faDollyFlatbed, faHandHoldingDollar, faBox, faFileContract, faReplyAll, faCartArrowDown,
   faUserFriends, faChalkboardTeacher, faTruck, faUserTie, faCoins, faDollarSign, faChartBar,
   faChartLine, faCalendarCheck, faBoxTissue, faDownload, faBars, faCaretDown, faUserCircle,
-  faRightFromBracket, faCog, faPrint, faGift, faMoneyBill, faLayerGroup, faChevronRight
+  faRightFromBracket, faCog, faPrint, faGift, faMoneyBill, faLayerGroup, faChevronRight, faFilter, faSearch
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -19,5 +19,6 @@ library.add(
   faDollyFlatbed, faHandHoldingDollar, faBox, faFileContract, faReplyAll, faCartArrowDown,
   faUserFriends, faChalkboardTeacher, faTruck, faUserTie, faCoins, faDollarSign, faChartBar,
   faChartLine, faCalendarCheck, faBoxTissue, faDownload, faBars, faCaretDown, faUserCircle,
-  faRightFromBracket, faCog, faPrint, farEnvelope, faGift, faMoneyBill, faLayerGroup, faChevronRight
+  faRightFromBracket, faCog, faPrint, farEnvelope, faGift, faMoneyBill, faLayerGroup, faChevronRight,
+  faFilter, faSearch
 );

@@ -20,10 +20,9 @@ const Notifications = () => {
                   <div className="absolute -top-0.5 right-3 w-2.5 h-2.5 rounded-full bg-red-500 text-white font-10 flex items-center justify-center animate-ping"/>
                   <div className="absolute -top-0.5 right-3 w-2.5 h-2.5 rounded-full bg-red-500 text-white font-10 flex items-center justify-center"/>
                 </>
-
           }
         </div>
-        <div className='px-4' style={ { width: '300px' } }>
+        <div className='px-4 py-3' style={ { width: '300px' } }>
           sadasd
         </div>
       </Dropdown>
