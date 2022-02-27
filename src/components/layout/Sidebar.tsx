@@ -1,3 +1,5 @@
+import { SIDEBAR_COLLAPSE } from 'constants/localStorage';
+
 import React, { useEffect } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,7 +11,6 @@ import { currentMenuId, sidebarCollapsed } from 'store/atoms/commonState';
 import Avatar from 'assets/images/avatar.jpg';
 import Logo from 'assets/images/logo-crm.jpg';
 import LogoMini from 'assets/images/logo-mini.png';
-import { SIDEBAR_COLLAPSE } from 'constants/localStorage';
 
 const Sidebar = React.memo(({ data } : {data: any}) => {
   const location = useLocation();
@@ -38,7 +39,7 @@ const Sidebar = React.memo(({ data } : {data: any}) => {
   }, [location.pathname]);
 
   return (
-    <nav className={ `sidebar sidebar-offcanvas flex-0-0-auto ${collapsed ? 'collapse-sidebar' : ''}` } id="sidebar">
+    <nav className={ `sidebar ${collapsed ? 'collapse-sidebar' : ''}` } id="sidebar">
       <div className="sidebar-brand-wrapper flex items-center justify-center">
         <a className="sidebar-brand brand-logo" href="/"><img src={ Logo } alt="logo"/></a>
         <a className="sidebar-brand brand-logo-mini hidden" href="/"><img src={ LogoMini } alt="logo"/></a>

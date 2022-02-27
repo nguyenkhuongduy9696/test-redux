@@ -11,7 +11,7 @@ const Error404 = () => {
   }, []);
 
   return (
-    <div className='w-screen h-screen flex flex-col justify-center items-center pb-12'>
+    <div className='w-full h-full flex flex-col justify-center items-center'>
       <p className='text-8xl mb-2 text-red-600 font-bold'>404</p>
       <p className='text-xl mb-3'>Không tìm thấy trang</p>
       <p className='font-15'>Hệ thống không tìm thấy trang bạn yêu cầu</p>

@@ -1,3 +1,5 @@
+import { ACCESS_TOKEN, CURRENT_BRANCH } from 'constants/localStorage';
+import { AUTH_USER_INFO_KEY } from 'constants/queryKeys/commonQueryKeys';
 
 import React, { useEffect, useState } from 'react';
 
@@ -10,12 +12,10 @@ import { useForm, Controller } from 'react-hook-form';
 import { useMutation, useQuery, useQueryClient } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { authServices } from 'services/authServices';
-import { helperServices } from 'services/helperServices';
+import { authService } from 'services/authService';
+import { helperService } from 'services/helperService';
 
 import RightBackground from 'assets/images/login-bg.jpg';
-import { ACCESS_TOKEN, CURRENT_BRANCH } from 'constants/localStorage';
-import { AUTH_USER_INFO_KEY } from 'constants/queryKeys/commonQueryKeys';
 
 type inputs = {
   username: string,
@@ -26,25 +26,25 @@ type inputs = {
 const Login = () => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
-  const token = helperServices().getCookie(ACCESS_TOKEN);
+  const token = helperService().getCookie(ACCESS_TOKEN);
   const currentBranch = localStorage.getItem(CURRENT_BRANCH);
   const methods = useForm<inputs>();
   const { register, formState: { errors }, setValue } = methods;
-  const { control, handleSubmit, formState: { errors: branchErrors } } = useForm<inputs>();
+  const { control, handleSubmit, formState: { errors: branchErrors }, setValue: branchSetValue } = useForm<inputs>();
   const [auth, setAuth] = useState(false);
 
-  const loginMutation = useMutation((params: object) => authServices().login(params));
+  const loginMutation = useMutation((params: object) => authService().login(params));
 
   const { data: userInfo, refetch, isFetching } = useQuery(
     AUTH_USER_INFO_KEY,
-    () => authServices().getUserInfo(),
+    () => authService().getUserInfo(),
     { suspense: false, enabled: Boolean(token) }
   );
 
   const onSubmit = (value: object) => {
     const makeValue = {
       ...value,
-      tenantcode: helperServices().getTenant(),
+      tenantcode: helperService().getTenant(),
       language: '',
       app_type: process.env.REACT_APP_APP_TYPE
     };
@@ -53,7 +53,7 @@ const Login = () => {
         if (res.meta.status_code !== 0) {
           toast.error(res.meta.message);
         } else {
-          helperServices().setCookie(ACCESS_TOKEN, res.data?.token, 1);
+          helperService().setCookie(ACCESS_TOKEN, res.data?.token, 1);
           await refetch();
           if (res.data.user.branches.length > 0) {
             toast.success('Đăng nhập tài khoản thành công');
@@ -73,19 +73,19 @@ const Login = () => {
   };
 
   const onLogout = () => {
-    helperServices().removeCookie(ACCESS_TOKEN);
+    helperService().removeCookie(ACCESS_TOKEN);
     setAuth(false);
     queryClient.setQueryData(AUTH_USER_INFO_KEY, undefined);
   };
 
   useEffect(() => {
     document.title = 'Đăng nhập hệ thống';
-    if (!userInfo) {
+    if (!userInfo && !token) {
       localStorage.removeItem(CURRENT_BRANCH);
     } else {
       if (!currentBranch) {
         if (userInfo.data && userInfo.data.user.branches.length === 0) {
-          helperServices().removeCookie(ACCESS_TOKEN);
+          helperService().removeCookie(ACCESS_TOKEN);
           toast.info('Tài khoản này chưa được phân chi nhánh, vui lòng đăng nhập bằng tài khoản khác');
           setValue('username', '');
           setValue('password', '');
@@ -107,6 +107,12 @@ const Login = () => {
     localStorage.setItem(CURRENT_BRANCH, JSON.stringify(branch_id));
     navigate('/', { replace: true });
   };
+
+  useEffect(() => {
+    if (userInfo && userInfo.data.user.branches.length > 0) {
+      branchSetValue('branch_id', userInfo.data.user.branches[0]);
+    }
+  }, [userInfo]);
 
   return (
     <div className="w-screen h-screen flex overflow-hidden">
@@ -156,7 +162,7 @@ const Login = () => {
               <BaseDropdownList
                 { ...field }
                 data={ userInfo ? userInfo.data ? userInfo.data.user.branches : [] : [] }
-                textField='name' defaultItem={ { id: null, name: 'Chọn chi nhánh' } }
+                textField='name'
                 iconLeft={ [{ icon: 'location-dot', onClick: null }] } errors={ branchErrors }
                 filterable={ true }
               /> }

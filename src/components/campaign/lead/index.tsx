@@ -10,6 +10,8 @@ import { leadService } from 'services/campaign/leadService';
 import { leadFilterParamState, leadPageLimitState, leadSelectedTableState } from 'store/atoms/campaign/lead/lead';
 import { leadColumnTableSelector } from 'store/selectors/campaign/lead';
 
+import DetailContent from './detail/DetailContent';
+
 const LeadScreen = () => {
   const pageLimit = useRecoilValue(leadPageLimitState);
   const filterParams = useRecoilValue(leadFilterParamState);
@@ -34,8 +36,11 @@ const LeadScreen = () => {
 
   return (
     <>
-      <Table selectedState={ leadSelectedTableState } columnSelector={ leadColumnTableSelector }
-        data={ data } paging={ pagination } setPaging={ setPagination } />
+      <div className="w-full p-2 lg:p-4">
+        <Table selectedState={ leadSelectedTableState } columnSelector={ leadColumnTableSelector }
+          data={ data } paging={ pagination } setPaging={ setPagination }
+          detail={ DetailContent }/>
+      </div>
     </>
   );
 };

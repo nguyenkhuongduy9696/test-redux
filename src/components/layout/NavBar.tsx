@@ -10,7 +10,7 @@ import { swal } from 'plugins/sweetAlert';
 import { useQueryClient } from 'react-query';
 import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
-import { helperServices } from 'services/helperServices';
+import { helperService } from 'services/helperService';
 import { sidebarCollapsed } from 'store/atoms/commonState';
 
 import Notifications from '../header/Notifications';
@@ -39,7 +39,7 @@ const NavBar = React.memo(({ data } : {data: any}) => {
       text: 'Đăng xuất khỏi tài khoản này?'
     }).then(async (result) => {
       if (result.isConfirmed) {
-        helperServices().removeCookie(ACCESS_TOKEN);
+        helperService().removeCookie(ACCESS_TOKEN);
         await queryClient.invalidateQueries(AUTH_USER_INFO_KEY);
       }
     });

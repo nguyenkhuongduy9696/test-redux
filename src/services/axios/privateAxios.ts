@@ -1,9 +1,9 @@
+import { ACCESS_TOKEN } from 'constants/localStorage';
+
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-import { ACCESS_TOKEN } from 'constants/localStorage';
-
-import { helperServices } from '../helperServices';
+import { helperService } from '../helperService';
 
 export const privateAxios = axios.create({
   baseURL: process.env.REACT_APP_BASE_URL,
@@ -11,7 +11,7 @@ export const privateAxios = axios.create({
 });
 
 privateAxios.interceptors.request.use(configs => {
-  const token = helperServices().getCookie(ACCESS_TOKEN);
+  const token = helperService().getCookie(ACCESS_TOKEN);
   if (token && typeof configs.headers === 'object') {
     configs.headers.Authorization = `Bearer ${token}`;
   }
@@ -28,7 +28,7 @@ privateAxios.interceptors.response.use(response => {
 error => {
   if (error.response?.status === 401) {
     toast.error(error);
-    helperServices().removeCookie(ACCESS_TOKEN);
+    helperService().removeCookie(ACCESS_TOKEN);
     window.location.replace('/auth/login');
   }
   return Promise.reject(error);

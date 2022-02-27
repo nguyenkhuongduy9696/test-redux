@@ -1,6 +1,7 @@
 :root {
     --nv-primary: #32c072;
-    --nv-sidebar-width-icon: '70px'
+    --nv-sidebar-width-icon: '70px';
+    --nv-text-primary: #475050;
 }
 
 body {
@@ -101,6 +102,8 @@ body {
 
 .main-container {
     background: #fbfcfd;
+    float: none;
+    overflow: hidden;
 }
 
 .dropdown-container {
@@ -152,5 +155,16 @@ body {
     border-radius: 4px;
     border-top: 1px solid #f2f4f9;
     border-left: 1px solid #f2f4f9;
+}
+
+.k-checkbox:checked, .k-checkbox.k-checked {
+    border-color: var(--nv-primary)!important;
+    color: white;
+    background-color: var(--nv-primary)!important;
+}
+
+.k-checkbox:focus, .k-checkbox.k-focus {
+    border-color: var(--nv-primary)!important;
+    box-shadow: none!important;
 }
 
