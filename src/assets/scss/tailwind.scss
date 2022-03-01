@@ -25,7 +25,6 @@ body {
   @apply bg-white flex items-center justify-center focus:outline-none;
   padding: 7px 16px;
   border-radius: 5px;
-  box-shadow: 0 4px 7px -2px rgba(0, 0, 0, 0.11), 0 2px 4px -5px rgba(0, 0, 0, 0.07);
 }
 .btn:not(.btn-dropdown):hover {
   box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.09), 0 2px 3px -5px rgba(0, 0, 0, 0.07);

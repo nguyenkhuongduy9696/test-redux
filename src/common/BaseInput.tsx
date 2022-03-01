@@ -34,7 +34,7 @@ const BaseInput = React.forwardRef<HTMLInputElement, ButtonProps>((
         {
           iconLeft && iconLeft.map((item: {icon: any, onClick: any}, index: number) => {
             return (
-              <span className='pl-1 text-gray-500 input-icon' key={ index }
+              <span className='pl-1 text-gray-500 input-icon cursor-pointer' key={ index }
                 onClick={ () => item.onClick }>
                 <FontAwesomeIcon icon={ item.icon } />
               </span>
@@ -45,9 +45,9 @@ const BaseInput = React.forwardRef<HTMLInputElement, ButtonProps>((
           className={ `${inputClassName} w-full focus:outline-none px-2` }
         />
         {
-          iconRight && iconLeft.map((item: {icon: any, onClick: any}, index: number) => {
+          iconRight && iconRight.map((item: {icon: any, onClick: any}, index: number) => {
             return (
-              <span className='pr-1 text-gray-500 input-icon' key={ index }
+              <span className='pr-1 text-gray-500 input-icon cursor-pointer' key={ index }
                 onClick={ () => item.onClick }>
                 <FontAwesomeIcon icon={ item.icon } />
               </span>

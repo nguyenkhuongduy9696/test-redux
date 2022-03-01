@@ -52,9 +52,9 @@
     width: 10px;
     height: 10px;
     background: transparent;
-    border-top: 3px solid var(--nv-text-primary);
-    border-right: 3px solid var(--nv-text-primary);
-    box-shadow: 0 0 0 var(--nv-text-primary);
+    border-top: 2px solid #8a9191;
+    border-right: 2px solid #8a9191;
+    box-shadow: 0 0 0 #8a9191;
     transition: all 400ms ease;
     position: absolute;
     left: 40%;
@@ -66,6 +66,7 @@
 
 .k-widget.k-grid .k-grid-content div.expand-arrow.down {
     transform: translate3d(0,-50%,0) rotate(135deg);
+    border-color: var(--nv-primary);
 }
 
 .k-widget.k-grid .k-grid-content .expand-cell:hover div.expand-arrow.right {
@@ -73,10 +74,10 @@
     border-color: var(--nv-primary);
 }
 
-.k-widget.k-grid .k-grid-content .expand-cell:hover div.expand-arrow.down {
-    transform: translate3d(0,-50%,0) rotate(45deg);
-    border-color: var(--nv-primary);
-}
+/*.k-widget.k-grid .k-grid-content .expand-cell:hover div.expand-arrow.down {*/
+/*    transform: translate3d(0,-50%,0) rotate(45deg);*/
+/*    border-color: var(--nv-primary);*/
+/*}*/
 
 .k-widget.k-grid .k-grid-content .expand-cell.expanded {
     background-color: #00000014;

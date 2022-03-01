@@ -172,3 +172,18 @@ body {
     box-shadow: none!important;
 }
 
+/*Tippy box*/
+.tippy-box {
+    max-width: 550px!important;
+    color: var(--nv-text-primary)!important;
+    font-size: 13px!important;
+}
+
+/*Day picker*/
+.DayPicker {
+    font-size: 14px!important;
+}
+.DayPicker-Weekday {
+    font-size: 14px!important;
+}
+

@@ -16,3 +16,50 @@ export const QUERY_PLACEHOLDER_DATA = {
     recordsFiltered: 0
   }
 };
+
+export const FILTER_DATE_TIME = [
+  {
+    id: 1,
+    title: 'Theo ngày',
+    list: [
+      { id: 11, title: 'Hôm nay' },
+      { id: 12, title: 'Hôm qua' }
+    ]
+  },
+  {
+    id: 2,
+    title: 'Theo tuần',
+    list: [
+      { id: 21, title: 'Tuần này' },
+      { id: 22, title: 'Tuần trước' },
+      { id: 23, title: '7 ngày qua' }
+    ]
+  },
+  {
+    id: 3,
+    title: 'Theo tháng',
+    list: [
+      { id: 31, title: 'Tháng này' },
+      { id: 32, title: 'Tháng trước' },
+      { id: 33, title: '30 ngày qua' }
+    ]
+  },
+  {
+    id: 4,
+    title: 'Theo quý',
+    list: [
+      { id: 41, title: 'Quý này' },
+      { id: 42, title: 'Quý trước' }
+    ]
+  },
+  {
+    id: 5,
+    title: 'Theo năm',
+    list: [
+      { id: 51, title: 'Năm nay' },
+      { id: 52, title: 'Năm trước' },
+      { id: 53, title: 'Toàn thời gian' }
+    ]
+  }
+
+];

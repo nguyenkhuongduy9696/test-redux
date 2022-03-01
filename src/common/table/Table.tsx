@@ -201,7 +201,7 @@ const Table = ({
       onSelectionChange={ selectionChange }
       onHeaderSelectionChange={ headerSelectionChange }
       detail={ DetailContent }
-      style={ { maxHeight: 'calc(100vh - 150px)' } }
+      style={ { maxHeight: 'calc(100vh - 200px)' } }
     >
       {
         totalColumnsShow.map((column: any, index: number) => {

@@ -6,6 +6,6 @@ export const swal = Swal.mixin({
   showCancelButton: true,
   cancelButtonText: 'Bỏ qua',
   confirmButtonColor: '#32c072',
-  cancelButtonColor: '#db2751',
+  cancelButtonColor: '#dc0606',
   focusConfirm: false
 });
