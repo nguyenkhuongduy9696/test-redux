@@ -13,7 +13,7 @@ const Filters = () => {
         <BaseButton iconLeft='filter' title='Thêm điều kiện lọc' className='btn-primary' />
         <FilterContainer>
           <div className="px-4 pb-2 pt-4">
-            <div className="w-full lg:w-1/3 2xl:w-1/5">
+            <div className="w-full md:w-1/2 md:pr-2">
               <FilterDate filterParams={ leadFilterParamState } filterKey='filterDate' />
             </div>
           </div>

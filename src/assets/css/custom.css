@@ -91,6 +91,22 @@ body {
     }
 }
 
+.width-search {
+    width: 600px;
+}
+
+.screen-icon-title {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background-color: var(--nv-primary);
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
 .dropdown .k-animation-container-relative {
     display: block;
     position: inherit;
@@ -181,9 +197,18 @@ body {
 
 /*Day picker*/
 .DayPicker {
-    font-size: 14px!important;
+    font-size: 13px!important;
+    width: 100%;
 }
 .DayPicker-Weekday {
-    font-size: 14px!important;
+    font-size: 13px!important;
+}
+.DayPicker-Day {
+    padding: 0.3rem!important;
+}
+
+.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+    background-color: var(--nv-primary)!important;
+    color: #ffffff!important;
 }
 

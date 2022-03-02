@@ -3,10 +3,12 @@ import { LEAD_LIST_KEY } from 'constants/queryKeys/campaignQueryKeys';
 
 import React, { useCallback, useEffect, useState } from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Table from 'common/table/Table';
 import { useQuery } from 'react-query';
 import { useRecoilValue } from 'recoil';
 import { leadService } from 'services/campaign/leadService';
+import { helperService } from 'services/helperService';
 import { leadFilterParamState, leadPageLimitState, leadSelectedTableState } from 'store/atoms/campaign/lead/lead';
 import { leadColumnTableSelector } from 'store/selectors/campaign/lead';
 
@@ -19,8 +21,10 @@ const LeadScreen = () => {
   const [pagination, setPagination] = useState({ skip: 1, take: pageLimit });
 
   const getData = useCallback(async (page, pageLimit) => {
+    const { filterDate } = filterParams;
+    const { from, to } = helperService().getFilterStateTime(filterDate);
     return await leadService().getList({
-      page, pageLimit
+      page, pageLimit, fromDate: from, toDate: to
     });
   }, [pagination.skip, pageLimit, filterParams]);
 
@@ -38,6 +42,12 @@ const LeadScreen = () => {
   return (
     <>
       <div className="w-full p-2 lg:p-4">
+        <div className="w-full flex items-center mb-4">
+          <div className='screen-icon-title'>
+            <FontAwesomeIcon icon='users' />
+          </div>
+          <p className='text-primary-500 font-bold'>Quản lý Lead</p>
+        </div>
         <LeadScreenFilter />
         <Table selectedState={ leadSelectedTableState } columnSelector={ leadColumnTableSelector }
           data={ data } paging={ pagination } setPaging={ setPagination }

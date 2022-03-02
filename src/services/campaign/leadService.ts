@@ -3,13 +3,18 @@ import { privateAxios } from 'services/axios/privateAxios';
 interface getListProps {
   page?: number,
   pageLimit?: number,
+  fromDate?: string,
+  toDate?: string
 }
 
 export const leadService = () => {
   const getList = async ({
-    page, pageLimit
+    page, pageLimit,
+    fromDate = '',
+    toDate = ''
   }: getListProps) => {
-    const query = `page=${page}&pageLimit=${pageLimit}`;
+    const query = `page=${page}&pageLimit=${pageLimit}` +
+                  `&from_date=${fromDate}&to_date=${toDate}`;
     const { data } = await privateAxios.get('/contact/contact/?' + query);
     return {
       ...data,
