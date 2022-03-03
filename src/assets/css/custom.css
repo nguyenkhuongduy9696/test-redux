@@ -96,8 +96,8 @@ body {
 }
 
 .screen-icon-title {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,6 +106,7 @@ body {
     border-radius: 3px;
     margin-right: 10px;
 }
+
 
 .dropdown .k-animation-container-relative {
     display: block;
@@ -133,16 +134,16 @@ body {
     min-width: 10rem;
 }
 
-.dropdown-container ul li {
+.dropdown-container:not(.dropdown-filter) ul li {
     padding: 6px 20px;
 }
 
-.dropdown-container ul li:hover {
+.dropdown-container:not(.dropdown-filter) ul li:hover {
     cursor: pointer;
     color: var(--nv-primary);
 }
 
-.dropdown-container ul li span.item-title {
+.dropdown-container:not(.dropdown-filter) ul li span.item-title {
     transition-property: margin-left;
     -webkit-transition-duration: 0.25s;
     -moz-transition-duration: 0.25s;
@@ -151,7 +152,7 @@ body {
     transition-timing-function: cubic-bezier(.26, .66, .45, .78);
 }
 
-.dropdown-container ul li:hover span.item-title {
+.dropdown-container:not(.dropdown-filter) ul li:hover span.item-title {
     margin-left: 3px;
 }
 
@@ -212,3 +213,93 @@ body {
     color: #ffffff!important;
 }
 
+
+/*React tabs*/
+.react-tabs__tab-list {
+    padding-top: 5px!important;
+    margin-left: 10px!important;
+    margin-right: 10px!important;
+    border-bottom: 1px solid #dee2e6!important;
+}
+
+.react-tabs__tab:focus:after {
+    background: initial!important;
+}
+
+.react-tabs__tab--selected {
+    border-bottom: 2px solid var(--nv-primary)!important;
+    /*border-bottom: 2px solid var(--nv-primary)!important;*/
+    border-top: none!important;
+    border-left: none!important;
+    border-right: none!important;
+    color: var(--nv-primary)!important;
+    font-weight: 700;
+}
+
+.k-dropdownlist.k-picker {
+    border-width: 0;
+    background-color: inherit;
+    font-family: Roboto,sans-serif;
+    font-size: 13px;
+    color: var(--nv-text-primary);
+}
+.k-dropdownlist.k-picker:hover {
+    background-color: inherit;
+}
+.k-dropdownlist.k-picker:focus-within {
+    box-shadow: none;
+}
+.k-dropdownlist .k-input-inner {
+    padding: 0 0.25rem!important;
+}
+
+/*Custom kendo react dropdown popup*/
+.k-animation-container .k-popup.k-list {
+    font-family: Roboto,sans-serif;
+    font-size: 12px;
+    color: var(--nv-text-primary);
+}
+.k-animation-container .k-popup.k-list .k-list-item {
+    padding: 0.5rem 1rem;
+}
+.k-animation-container .k-popup.k-list .k-list-optionlabel.k-selected {
+    background-color: var(--nv-primary);
+}
+.k-animation-container .k-popup.k-list .k-list-item.k-selected {
+    background-color: #ffffff;
+    color: var(--nv-primary)
+}
+.k-animation-container .k-popup.k-list .k-list-filter .k-searchbox.k-input {
+    border-color: #ced4da;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.k-animation-container .k-popup.k-list .k-list-filter .k-searchbox.k-input input.k-input-inner {
+    padding: 0.375rem;
+}
+.k-animation-container .k-popup.k-list .k-list-filter .k-searchbox.k-input:focus-within {
+    box-shadow: none;
+}
+
+/*Multiselect*/
+.k-multiselect.k-input {
+    border-width: 0;
+    font-size: 13px;
+    color: var(--nv-text-primary);
+    font-family: Roboto,sans-serif;
+    padding: 2px 0;
+}
+
+.k-multiselect.k-input .k-chip {
+    font-size: 13px;
+}
+
+.k-multiselect.k-input:focus-within {
+    box-shadow: none;
+    outline: none;
+}
+
+.k-list-item.k-focus {
+    box-shadow: none!important;
+}

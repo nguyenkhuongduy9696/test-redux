@@ -24,16 +24,16 @@ const BaseButton = ({
   title,
   titleClassName,
   iconLeft,
-  iconLeftClassName = 'mr-2',
+  iconLeftClassName = '',
   iconRight,
-  iconRightClassName = 'ml-2',
+  iconRightClassName = '',
   children,
   ...props
 } : buttonType) => {
   return (
     <button className={ `btn ${enable ? className : disableClassName}` } onClick={ enable ? onClick : null } { ...props }>
       { iconLeft && <FontAwesomeIcon icon={ iconLeft } className={ iconLeftClassName } /> }
-      { title && <span className={ titleClassName }>{title}</span> }
+      { title && <span className={ `${titleClassName} mx-2` }>{title}</span> }
       { children }
       { iconRight && <FontAwesomeIcon icon={ iconRight } className={ iconRightClassName } /> }
     </button>

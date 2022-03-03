@@ -84,13 +84,13 @@ const Login = () => {
       localStorage.removeItem(CURRENT_BRANCH);
     } else {
       if (!currentBranch) {
-        if (userInfo.data && userInfo.data.user.branches.length === 0) {
+        if (userInfo && userInfo.data && userInfo.data.user.branches.length === 0) {
           helperService().removeCookie(ACCESS_TOKEN);
           toast.info('Tài khoản này chưa được phân chi nhánh, vui lòng đăng nhập bằng tài khoản khác');
           setValue('username', '');
           setValue('password', '');
           queryClient.setQueryData(AUTH_USER_INFO_KEY, undefined);
-        } else if (userInfo.data && userInfo.data.user.branches.length === 1) {
+        } else if (userInfo && userInfo.data && userInfo.data.user.branches.length === 1) {
           localStorage.setItem(CURRENT_BRANCH, JSON.stringify(userInfo.data.user.branches[0]));
           navigate('/', { replace: true });
         } else {
@@ -163,8 +163,9 @@ const Login = () => {
                 { ...field }
                 data={ userInfo ? userInfo.data ? userInfo.data.user.branches : [] : [] }
                 textField='name'
-                iconLeft={ [{ icon: 'location-dot', onClick: null }] } errors={ branchErrors }
-                filterable={ true }
+                iconLeft={ [{ icon: 'location-dot', onClick: null }] }
+                errors={ branchErrors }
+                filterable={ false }
               /> }
           />
           { branchErrors.branch_id?.type === 'validate' && <p className='input-error'>Mời bạn chọn chi nhánh</p> }

@@ -7,7 +7,7 @@ interface propTypes {
     label?: string,
     required?: boolean,
     tooltip?: string,
-    children: any
+    children?: any
 }
 
 const InputLabel = ({

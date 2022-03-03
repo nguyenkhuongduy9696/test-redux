@@ -8,7 +8,7 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 import { menu } from 'routers/menu';
 import { currentMenuId, sidebarCollapsed } from 'store/atoms/commonState';
 
-import Avatar from 'assets/images/avatar.jpg';
+import Avatar from 'assets/images/default-avatar.png';
 import Logo from 'assets/images/logo-crm.jpg';
 import LogoMini from 'assets/images/logo-mini.png';
 

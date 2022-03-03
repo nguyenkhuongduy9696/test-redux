@@ -3,7 +3,9 @@ import { atom } from 'recoil';
 export const leadFilterParamState = atom({
   key: 'leadFilterParamState',
   default: {
-    filterDate: { type: 0, value: 53 }
+    filterDate: { type: 0, value: 53 },
+    employeeStatus: { id: 99, text: 'Tất cả' },
+    employees: []
   }
 });
 

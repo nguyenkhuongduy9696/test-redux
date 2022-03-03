@@ -42,7 +42,7 @@ const BaseInput = React.forwardRef<HTMLInputElement, ButtonProps>((
           })
         }
         <input { ...props } type={ inputType } placeholder={ placeholder } name={ name } ref={ ref }
-          className={ `${inputClassName} w-full focus:outline-none px-2` }
+          className={ `${inputClassName} w-full focus:outline-none px-2 py-0.5` }
         />
         {
           iconRight && iconRight.map((item: {icon: any, onClick: any}, index: number) => {

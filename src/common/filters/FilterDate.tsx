@@ -198,7 +198,7 @@ const FilterDate = ({ filterParams, filterKey = 'filterDate', title = 'Thời gi
             onClickOutside={ () => setVisible(false) }
             placement="right"
             theme="light">
-            <div className='mt-1.5 px-2 py-1.5 border rounded-md flex items-center input-wrapper' onClick={ () => setVisible(!visible) }>
+            <div className='mt-1.5 px-2 py-2 border rounded-md flex items-center input-wrapper' onClick={ () => setVisible(!visible) }>
               <input type='text' placeholder='Thời gian' value={ textField } onChange={ () => {} }
                 className='w-full focus:outline-none px-2' readOnly={ true }/>
               <span className='cursor-pointer text-primary-500 hover:text-primary-600'>
