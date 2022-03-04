@@ -95,6 +95,11 @@ body {
     width: 600px;
 }
 
+.card__item {
+    padding: 7px 0;
+    min-width: 200px;
+}
+
 .screen-icon-title {
     width: 35px;
     height: 35px;
@@ -107,6 +112,12 @@ body {
     margin-right: 10px;
 }
 
+.main-container {
+    background: #fbfcfd;
+    float: none;
+    overflow: hidden;
+}
+
 
 .dropdown .k-animation-container-relative {
     display: block;
@@ -115,12 +126,6 @@ body {
 
 .dropdown .k-animation-container {
     overflow: inherit;
-}
-
-.main-container {
-    background: #fbfcfd;
-    float: none;
-    overflow: hidden;
 }
 
 .dropdown-container {

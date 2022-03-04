@@ -4,8 +4,19 @@ import { Fade } from '@progress/kendo-react-animation';
 
 import useOnClickOutSide from '../hook/usOnClickOutSide';
 
-// eslint-disable-next-line no-unused-vars
-const Dropdown = React.memo(({ children, position = 'right', isDropdownFilter = false, ...props } : { children: any, position?: string, isDropdownFilter?: boolean}) => {
+const Dropdown = React.memo(({
+  children,
+  position = 'right',
+  isDropdownFilter = false,
+  dropdownClassName = '',
+  // eslint-disable-next-line no-unused-vars
+  ...props
+} : {
+    children: any,
+    position?: string,
+    isDropdownFilter?: boolean,
+    dropdownClassName?: string
+}) => {
   const child = Children.toArray(children);
   const ref = useRef(null);
   const [show, setShow] = useState(false);
@@ -13,7 +24,7 @@ const Dropdown = React.memo(({ children, position = 'right', isDropdownFilter = 
   useOnClickOutSide(ref, () => setShow(false));
 
   return (
-    <div className='dropdown relative' ref={ ref }>
+    <div className={ `${dropdownClassName} dropdown relative` } ref={ ref }>
       <div onClick={ () => setShow(!show) }>
         { child[0] }
       </div>

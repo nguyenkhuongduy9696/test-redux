@@ -17,14 +17,14 @@ interface buttonType {
 }
 
 const BaseButton = ({
-  className,
+  className = '',
   disableClassName = 'btn-gray',
   onClick = null,
   enable = true,
   title,
-  titleClassName,
+  titleClassName = '',
   iconLeft,
-  iconLeftClassName = '',
+  iconLeftClassName = 'mr-2',
   iconRight,
   iconRightClassName = '',
   children,
@@ -33,7 +33,7 @@ const BaseButton = ({
   return (
     <button className={ `btn ${enable ? className : disableClassName}` } onClick={ enable ? onClick : null } { ...props }>
       { iconLeft && <FontAwesomeIcon icon={ iconLeft } className={ iconLeftClassName } /> }
-      { title && <span className={ `${titleClassName} mx-2` }>{title}</span> }
+      { title && <div className={ `${titleClassName} mr-2` }>{title}</div> }
       { children }
       { iconRight && <FontAwesomeIcon icon={ iconRight } className={ iconRightClassName } /> }
     </button>

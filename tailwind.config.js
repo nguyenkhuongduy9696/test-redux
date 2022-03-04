@@ -84,6 +84,33 @@ module.exports = {
         },
         '.font-20': {
           'font-size': '20px'
+        },
+        '.w-100': {
+          width: '100px'
+        },
+        '.w-200': {
+          width: '200px'
+        },
+        '.w-300': {
+          width: '300px'
+        },
+        '.w-400': {
+          width: '400px'
+        },
+        '.w-500': {
+          width: '500px'
+        },
+        '.w-600': {
+          width: '600px'
+        },
+        '.w-700': {
+          width: '700px'
+        },
+        '.w-800': {
+          width: '800px'
+        },
+        '.w-900': {
+          width: '900px'
         }
       });
     })

@@ -1,3 +1,6 @@
+// Fontawesome
+export const TRASH_CAN_REGULAR: any = 'fa-regular fa-trash-can';
+
 export const QUERY_PLACEHOLDER_DATA = {
   data: [],
   meta: {

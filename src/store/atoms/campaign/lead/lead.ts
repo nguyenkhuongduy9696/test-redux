@@ -30,7 +30,7 @@ export const leadColumnTableState = atom({
     { field: 'mobile', title: 'Số điện thoại', minWidth: 120, isShow: true },
     { field: 'email', title: 'Email', minWidth: 220, isShow: true },
     { field: 'sex', title: 'Giới tính', minWidth: 100, isShow: true },
-    { field: 'address', title: 'Địa chỉ', minWidth: 200, isShow: false },
+    { field: 'address', title: 'Địa chỉ', minWidth: 250, isShow: true },
     { field: 'employee', title: 'Nhân viên phụ trách', minWidth: 230, isShow: true },
     { field: 'tags', title: 'Thẻ', minWidth: 150, isShow: true },
     { field: 'created_at', title: 'Ngày nhận lead', minWidth: 150, isShow: true },
