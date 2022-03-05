@@ -26,13 +26,13 @@ body {
   padding: 7px 16px;
   border-radius: 5px;
 }
-.btn:not(.btn-dropdown):hover {
+.btn:not(.btn-dropdown):not(.btn-disable):hover {
   box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.09), 0 2px 3px -5px rgba(0, 0, 0, 0.07);
   transform: scale(1.02);
 }
-.btn:not(.btn-dropdown):active,
-.btn:not(.btn-dropdown):active:focus,
-.btn:not(.btn-dropdown):active:hover {
+.btn:not(.btn-dropdown):not(.btn-disable):active,
+.btn:not(.btn-dropdown):not(.btn-disable):active:focus,
+.btn:not(.btn-dropdown):not(.btn-disable):active:hover {
   box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.09), 0 2px 3px -5px rgba(0, 0, 0, 0.07);
   transform: scale(1);
   opacity: 0.85;
@@ -42,6 +42,10 @@ body {
 }
 .btn-gray {
   @apply border border-gray-500 text-gray-500 hover:text-gray-600 cursor-pointer
+}
+
+.btn-disable {
+  @apply bg-gray-400 text-white
 }
 
 /*Custom input*/

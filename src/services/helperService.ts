@@ -146,5 +146,22 @@ export const helperService = () => {
     }
   };
 
-  return { getCookie, getTenant, setCookie, removeCookie, findValueById, getFilterStateTime };
+  const replaceItemAtIndex = (arr: any, index: number, newValue: any) => {
+    return [...arr.slice(0, index), newValue, ...arr.slice(index + 1)];
+  };
+
+  const findIndexItem = (arr: any, item: any) => {
+    return arr.findIndex((listItem: any) => listItem === item);
+  };
+
+  return {
+    getCookie,
+    getTenant,
+    setCookie,
+    removeCookie,
+    findValueById,
+    getFilterStateTime,
+    replaceItemAtIndex,
+    findIndexItem
+  };
 };

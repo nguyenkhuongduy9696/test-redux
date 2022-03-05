@@ -10,10 +10,12 @@ import TenantError from 'components/errors/TenantError';
 import Sidebar from 'components/layout/Sidebar';
 import { useIsFetching, useQueryClient } from 'react-query';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
-import { useSetRecoilState } from 'recoil';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 import { branchesState, permissionsState } from 'store/atoms/commonState';
 
 import NavBar from '../components/layout/NavBar';
+import { PERMISSION_ID_LEAD } from '../constants/permission/Permissions';
+import { permissionService } from '../services/permissionService';
 import { DashboardScreen, LeadScreen } from './lazyLoad';
 import RequireAuth from './RequireAuth';
 
@@ -21,7 +23,7 @@ const RouteContainer = () => {
   const isFetching = useIsFetching();
   const navigate = useNavigate();
   const location = useLocation();
-  const setPermissionState = useSetRecoilState(permissionsState);
+  const [permissionState, setPermissionState] = useRecoilState(permissionsState);
   const setBranchesState = useSetRecoilState(branchesState);
   const queryClient = useQueryClient();
   const noHeader = ['auth', 'error'];
@@ -59,7 +61,7 @@ const RouteContainer = () => {
           <Route path='/' element={ <RequireAuth is_view={ true } title='Tổng quan'>
             <DashboardScreen />
           </RequireAuth> } />
-          <Route path='/admin/lead/lead' element={ <RequireAuth is_view={ true } title='Lead'>
+          <Route path='/admin/lead/lead' element={ <RequireAuth is_view={ permissionService(permissionState).checkViewPermission(PERMISSION_ID_LEAD) } title='Lead'>
             <LeadScreen />
           </RequireAuth> } />
           <Route path='*' element={ <Error404 /> } />

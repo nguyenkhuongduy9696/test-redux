@@ -15,6 +15,7 @@
 .k-widget.k-grid .k-grid-header .k-grid-header-wrap thead tr th{
     border: none;
     padding: 0.6rem 0.5rem;
+    background-color: #62626214;
 }
 
 /*Content*/
@@ -45,7 +46,7 @@
 
 .k-widget.k-grid th.k-state-selected, .k-widget.k-grid td.k-state-selected, .k-widget.k-grid tr.k-state-selected > td {
     color: var(--nv-text-primary);
-    background-color: #00000014;
+    background-color: #8A8A8A14;
 }
 
 .k-widget.k-grid .k-grid-content div.expand-arrow {

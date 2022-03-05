@@ -118,6 +118,10 @@ body {
     overflow: hidden;
 }
 
+button, [role="button"] {
+    cursor: initial;
+}
+
 
 .dropdown .k-animation-container-relative {
     display: block;
@@ -245,7 +249,7 @@ body {
     border-width: 0;
     background-color: inherit;
     font-family: Roboto,sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     color: var(--nv-text-primary);
 }
 .k-dropdownlist.k-picker:hover {
@@ -269,10 +273,12 @@ body {
 }
 .k-animation-container .k-popup.k-list .k-list-optionlabel.k-selected {
     background-color: var(--nv-primary);
+    font-weight: 700;
 }
 .k-animation-container .k-popup.k-list .k-list-item.k-selected {
     background-color: #ffffff;
-    color: var(--nv-primary)
+    color: var(--nv-primary);
+    font-weight: 700;;
 }
 .k-animation-container .k-popup.k-list .k-list-filter .k-searchbox.k-input {
     border-color: #ced4da;
@@ -307,4 +313,41 @@ body {
 
 .k-list-item.k-focus {
     box-shadow: none!important;
+}
+
+/*Dialog*/
+.k-dialog-wrapper .k-dialog {
+    border-radius: 5px !important;
+    box-shadow: 5px 25px 50px rgba(0, 0, 0, 0.25);
+    position: absolute!important;
+    top: 64px;
+    border-width: 0;
+}
+
+.k-widget.k-window.k-dialog .k-dialog-titlebar {
+    background-color: var(--nv-primary);
+    background-clip: unset;
+    border-radius: 4px 4px 0 0;
+    height: 44px;
+    box-sizing: border-box;
+    background-image: none;
+    border-color: inherit;
+    color: #ffffff;
+}
+
+.k-window-title {
+    font-size: 18px!important;
+}
+
+.k-window-actions.k-dialog-actions .k-icon.k-i-x {
+    color: #fff;
+    min-width: 1rem;
+    min-height: 1rem;
+}
+
+.k-icon.k-i-x {
+    color: #666;
+}
+.k-icon.k-i-x:hover {
+    color: #2e2e2e;
 }
