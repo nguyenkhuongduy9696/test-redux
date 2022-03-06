@@ -1,5 +1,8 @@
 import moment from 'moment';
+import { useQuery } from 'react-query';
 import { getCookie as typeScriptGetCookie, setCookie as typeScriptSetCookie, removeCookie as typeScriptRemoveCookie } from 'typescript-cookie';
+
+import { commonService } from './commonService';
 
 const formatTime = (time: any) => {
   return moment(time).format('YYYY-MM-DD');
@@ -154,6 +157,26 @@ export const helperService = () => {
     return arr.findIndex((listItem: any) => listItem === item);
   };
 
+  const useGenerateCode = async (tableName: string, columnName: string, prefix: string, defaults: any, enabled?: boolean) => {
+    return useQuery(
+      ['generate_code', tableName, columnName],
+      () => commonService().generateCode(tableName, columnName, prefix, defaults),
+      {
+        enabled: enabled,
+        placeholderData: { code: 'Đang tạo mã' }
+      }
+    );
+  };
+
+  const uploadImageBase64 = (file: any) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+    });
+  };
+
   return {
     getCookie,
     getTenant,
@@ -162,6 +185,8 @@ export const helperService = () => {
     findValueById,
     getFilterStateTime,
     replaceItemAtIndex,
-    findIndexItem
+    findIndexItem,
+    useGenerateCode,
+    uploadImageBase64
   };
 };

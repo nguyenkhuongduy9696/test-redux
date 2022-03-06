@@ -54,7 +54,7 @@ const Sidebar = React.memo(({ data } : {data: any}) => {
               </div>
               <div className="profile-name">
                 <h5 className="mb-0 font-weight-normal">{ data ? data.data?.user?.username : '' }</h5>
-                <span>{data ? data.data?.user?.designation : ''}</span>
+                <div className='truncate w-36 font-12'>{data ? data.data?.user?.designation : ''}</div>
               </div>
             </div>
           </div>
@@ -66,13 +66,13 @@ const Sidebar = React.memo(({ data } : {data: any}) => {
           {
             menu.map((item: any, index) => {
               return (
-                <li className={ `nav-item menu-items ${item.id === menuId ? 'menu-active' : ''}` } key={ index }>
+                <li className='nav-item menu-items' key={ index }>
                   <Link to={ item.subMenu.length > 0 ? '#' : item.path } >
-                    <p className="nav-link parent-link">
-                      <span className="menu-icon parent-icon">
+                    <p className={ `nav-link parent-link ${item.id === menuId ? 'menu-active' : ''}` }>
+                      <span className="menu-icon parent-icon font-16">
                         <FontAwesomeIcon icon={ item.icon } />
                       </span>
-                      <span className="menu-title cursor-pointer parent-title">{ item.title }</span>
+                      <span className="menu-title cursor-pointer parent-title font-bold">{ item.title }</span>
                       {/* { */}
                       {/*  item.subMenu.length > 0 && */}
                       {/*  <span className="menu-arrow cursor-pointer"> */}

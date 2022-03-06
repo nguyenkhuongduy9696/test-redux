@@ -116,6 +116,13 @@ body {
     background: #fbfcfd;
     float: none;
     overflow: hidden;
+    border-left-width: 1px;
+}
+
+.spinner {
+    border-color: #fff;
+    border-top-color: var(--nv-text-primary);
+    border-radius: 50%;
 }
 
 button, [role="button"] {
@@ -225,9 +232,6 @@ button, [role="button"] {
 
 /*React tabs*/
 .react-tabs__tab-list {
-    padding-top: 5px!important;
-    margin-left: 10px!important;
-    margin-right: 10px!important;
     border-bottom: 1px solid #dee2e6!important;
 }
 
@@ -324,7 +328,7 @@ button, [role="button"] {
     border-width: 0;
 }
 
-.k-widget.k-window.k-dialog .k-dialog-titlebar {
+.k-dialog-wrapper .k-dialog .k-dialog-titlebar {
     background-color: var(--nv-primary);
     background-clip: unset;
     border-radius: 4px 4px 0 0;
@@ -335,10 +339,33 @@ button, [role="button"] {
     color: #ffffff;
 }
 
-.k-window-title {
-    font-size: 18px!important;
+.k-dialog-wrapper .k-dialog .k-window-content {
+    padding: 0;
+    font-size: 14px;
+    color: var(--nv-text-primary);
 }
-
+.k-dialog-wrapper .k-dialog .k-window-content .k-dialog-body {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+}
+.k-dialog-wrapper .k-dialog .k-window-content .dialog-actions {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #eaeaea;
+}
+.k-dialog-wrapper .k-dialog .k-window-content .react-tabs__tab-list {
+    margin: 0 1rem 0 1rem;
+}
+.k-window-title {
+    font-size: 16px!important;
+}
 .k-window-actions.k-dialog-actions .k-icon.k-i-x {
     color: #fff;
     min-width: 1rem;

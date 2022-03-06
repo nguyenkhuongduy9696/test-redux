@@ -116,7 +116,7 @@ const Login = () => {
 
   return (
     <div className="w-screen h-screen flex overflow-hidden">
-      <div className={ `${auth ? 'w-0 overflow-hidden' : 'w-full lg:w-3/5'} ease-in-out duration-500 h-full h-full flex items-center justify-center` }>
+      <div className={ `${auth ? 'w-0 overflow-hidden' : 'w-full lg:w-2/5'} ease-in-out duration-500 h-full h-full flex items-center justify-center` }>
         <div className={ `flex flex-col ${auth ? 'hidden' : ''}` }>
           {
             !userInfo && !isFetching && !loginMutation.isLoading &&
@@ -153,8 +153,8 @@ const Login = () => {
           { isFetching || loginMutation.isLoading ? <div className='flex flex-col items-center'><Loader /></div> : null }
         </div>
       </div>
-      <div className={ `ease-in-out duration-500 h-full flex items-center justify-center ${auth ? 'w-full lg:w-3/5' : 'w-0 overflow-hidden'}` }>
-        <div className="w-80">
+      <div className={ `ease-in-out duration-500 h-full flex items-center justify-center ${auth ? 'w-full lg:w-2/5' : 'w-0 overflow-hidden'}` }>
+        <div className={ `w-80 ${auth ? '' : 'hidden'}` }>
           <p className='font-17 text-gradient-primary font-bold mb-3'>Chọn chi nhánh</p>
           <Controller name='branch_id' control={ control }
             rules={ { validate: item => !!item && item?.id !== null } }
@@ -179,8 +179,8 @@ const Login = () => {
           </p>
         </div>
       </div>
-      <div className="w-2/5 hidden lg:block h-full relative">
-        <div className="h-full w-full oblique absolute top-0" style={ { right: '-5rem' } }>
+      <div className="w-3/5 hidden lg:block h-full relative">
+        <div className="h-full w-full absolute top-0">
           <div className='h-full w-full bg-cover'
             style={ { backgroundImage: `url(${RightBackground})` } } >
           </div>

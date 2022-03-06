@@ -39,7 +39,7 @@ const Filters = () => {
           <Tabs forceRenderTabPanel={ true }
             selectedIndex={ tabIndex }
             onSelect={ (index: number) => setTabIndex(index) }>
-            <TabList>
+            <TabList className='mx-2 mb-3 mt-1'>
               <Tab>Khách hàng</Tab>
             </TabList>
             <TabPanel>

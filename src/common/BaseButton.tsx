@@ -34,7 +34,7 @@ const BaseButton = ({
     <button className={ `btn leading-snug ${enable ? className : `btn-disable ${disableClassName}`}` }
       onClick={ enable ? onClick : null } { ...props }>
       { iconLeft && <FontAwesomeIcon icon={ iconLeft } className={ iconLeftClassName } /> }
-      { title && <div className={ `${titleClassName}` }>{title}</div> }
+      { title && <div className={ `font-13 ${titleClassName}` }>{title}</div> }
       { children }
       { iconRight && <FontAwesomeIcon icon={ iconRight } className={ iconRightClassName } /> }
     </button>
