@@ -55,3 +55,8 @@ export const FILTER_DATE_ARRAY = [
   { id: 41, title: 'Quý này' }, { id: 42, title: 'Quý trước' },
   { id: 51, title: 'Năm nay' }, { id: 52, title: 'Năm trước' }, { id: 53, title: 'Toàn thời gian' }
 ];
+
+export const GENDER_RADIO = [
+  { value: 0, label: 'Nam' },
+  { value: 1, label: 'Nữ' }
+];

@@ -35,6 +35,11 @@ body {
     flex: 1 1 auto;
 }
 
+.webcam-screen video {
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
 .nv-loader {
     display: inline-block;
     position: relative;
@@ -377,4 +382,19 @@ button, [role="button"] {
 }
 .k-icon.k-i-x:hover {
     color: #2e2e2e;
+}
+
+/*Radio group*/
+.k-radio:checked {
+    box-shadow: none;
+    border-color: var(--nv-primary)!important;
+    background-color: var(--nv-primary)!important;
+}
+.k-radio:checked:focus {
+    border-color: var(--nv-primary)!important;
+    box-shadow: none!important;
+}
+.k-radio:focus {
+    box-shadow: none!important;
+    border-color: var(--nv-primary)!important;
 }

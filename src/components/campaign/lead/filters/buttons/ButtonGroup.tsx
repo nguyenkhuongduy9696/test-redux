@@ -28,7 +28,7 @@ const ButtonGroup = () => {
   return (
     <>
       <BaseButton iconLeft='plus'
-        className='btn-primary ml-2'
+        className='btn-gray ml-2'
         title='Thêm mới'
         disableClassName='btn-disable ml-2'
         onClick={ () => setPopup('add') }
@@ -38,7 +38,7 @@ const ButtonGroup = () => {
         <BaseButton iconLeft='list'
           iconLeftClassName=''
           iconRight='caret-down'
-          className='btn-primary h-9'
+          className='btn-gray h-9'
         />
         <div className='w-400 grid grid-cols-2 px-4 py-2'>
           { columns.filter(item => item.field !== 'expanded' && item.field !== 'checked').map((item: any) => (

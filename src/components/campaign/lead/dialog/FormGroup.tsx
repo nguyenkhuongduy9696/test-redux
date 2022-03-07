@@ -5,7 +5,7 @@ import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import ContactForm from './forms/ContactForm';
 import InfoForm from './forms/InfoForm';
 
-const FormGroup = () => {
+const FormGroup = ({ formValues } : {formValues: any }) => {
   const [tabIndex, setTabIndex] = useState(0);
 
   return (
@@ -18,7 +18,7 @@ const FormGroup = () => {
           <Tab>Người liên hệ</Tab>
         </TabList>
         <TabPanel>
-          <InfoForm />
+          <InfoForm formValues={ formValues } />
         </TabPanel>
         <TabPanel>
           <ContactForm />

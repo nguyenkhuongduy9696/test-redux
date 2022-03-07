@@ -19,7 +19,7 @@ const BaseInput = React.forwardRef<HTMLInputElement, ButtonProps>((
     iconLeft,
     iconRight,
     inputType = 'text',
-    baseInputClassName = 'mb-3',
+    baseInputClassName = 'mb-1',
     inputWrapperClassName = 'mt-1.5 px-2 py-1.5 border rounded-md',
     inputClassName = '',
     children,

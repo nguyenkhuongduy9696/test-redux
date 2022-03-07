@@ -34,7 +34,7 @@ const Filters = () => {
         <BaseButton iconLeft='filter'
           title='Thêm điều kiện lọc'
           iconRight='caret-down'
-          className='btn-primary' />
+          className='btn-gray' />
         <FilterContainer>
           <Tabs forceRenderTabPanel={ true }
             selectedIndex={ tabIndex }

@@ -18,7 +18,7 @@ const InputLabel = ({
   children
 } : propTypes) => {
   return (
-    <div className={ `mb-3 ${wrapperClassName}` }>
+    <div className={ `mb-2 ${wrapperClassName}` }>
       { label && <label className='font-bold font-13'>
         { label }
         { required ? <span className='text-pink-600'>*</span> : '' }

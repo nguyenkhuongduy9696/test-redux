@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { Dialog } from '@progress/kendo-react-dialogs';
 import BaseButton from 'common/BaseButton';
@@ -23,17 +23,27 @@ const DialogLead = React.memo(({
 
     }
   });
+  const { handleSubmit } = methods;
+
+  const [values, setValues] = useState({
+    birthdate: null,
+    sex: 0
+  });
+
+  const onSubmit = () => {
+
+  };
 
   return (
     <>
       <div ref={ ref }>
         <Dialog title={ title } onClose={ onClose } width={ screenWidth > 1200 ? 1200 : 'calc(100% - 20px)' } appendTo={ ref.current }>
           <FormProvider { ...methods }>
-            <FormGroup />
+            <FormGroup formValues={ { values, setValues } } />
           </FormProvider>
           <div className="dialog-actions">
-            <BaseButton className='btn-primary' title='Lưu' iconLeft='save' />
-            <BaseButton className='btn-gray lg:ml-2' title='Đóng' iconLeft='times' />
+            <BaseButton className='btn-gray' title='Lưu' iconLeft='save' onClick={ handleSubmit(onSubmit) } />
+            <BaseButton className='btn-gray lg:ml-2' title='Đóng' iconLeft='times' onClick={ onClose } />
           </div>
         </Dialog>
       </div>

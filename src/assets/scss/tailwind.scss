@@ -56,13 +56,13 @@ body {
   @apply text-primary-500
 }
 .input-wrapper.form-error {
-  @apply border-pink-600
+  @apply border-red-600
 }
 .input-wrapper.form-error .input-icon {
-  @apply text-pink-600
+  @apply text-red-600
 }
 .input-error {
-  @apply text-pink-600 font-13
+  @apply text-red-600 font-12
 }
 
 /*Custom icon button*/
@@ -78,8 +78,8 @@ body {
   @apply text-primary-500
 }
 .dropdown-wrapper.form-error {
-  @apply border-pink-600
+  @apply border-red-600
 }
 .dropdown-wrapper.form-error .input-icon {
-  @apply text-pink-600
+  @apply text-red-600
 }

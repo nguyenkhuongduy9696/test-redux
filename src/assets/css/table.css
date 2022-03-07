@@ -4,7 +4,7 @@
 /*Header*/
 .k-widget.k-grid .k-grid-header{
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 500;
     color: var(--nv-text-primary);
 }
 
@@ -15,7 +15,7 @@
 .k-widget.k-grid .k-grid-header .k-grid-header-wrap thead tr th{
     border: none;
     padding: 0.6rem 0.5rem;
-    background-color: #62626214;
+    /*background-color: #62626214;*/
 }
 
 /*Content*/

@@ -10,7 +10,7 @@ import {
   faChartLine, faCalendarCheck, faBoxTissue, faDownload, faBars, faCaretDown, faUserCircle,
   faRightFromBracket, faCog, faPrint, faGift, faMoneyBill, faLayerGroup, faChevronRight, faFilter,
   faSearch, faArrowCircleRight, faCheck, faCheckSquare, faListCheck, faTimes, faTimesCircle,
-  faTimesSquare, faPlus, faPenSquare, faPen, faSave, faImages
+  faTimesSquare, faPlus, faPenSquare, faPen, faSave, faImages, faCamera
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -23,5 +23,5 @@ library.add(
   faChartLine, faCalendarCheck, faBoxTissue, faDownload, faBars, faCaretDown, faUserCircle,
   faRightFromBracket, faCog, faPrint, farEnvelope, faGift, faMoneyBill, faLayerGroup, faChevronRight,
   faFilter, faSearch, faArrowCircleRight, faCheck, faCheckSquare, faListCheck, faTimes, faTimesCircle,
-  faTimesSquare, faPlus, faPenSquare, faPen, faTrashCan, faSave, faImages
+  faTimesSquare, faPlus, faPenSquare, faPen, faTrashCan, faSave, faImages, faCamera
 );
