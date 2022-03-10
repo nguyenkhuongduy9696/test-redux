@@ -157,7 +157,7 @@ export const helperService = () => {
     return arr.findIndex((listItem: any) => listItem === item);
   };
 
-  const useGenerateCode = async (tableName: string, columnName: string, prefix: string, defaults: any, enabled?: boolean) => {
+  const useGenerateCode = (tableName: string, columnName: string, prefix: string, defaults: any, enabled?: boolean) => {
     return useQuery(
       ['generate_code', tableName, columnName],
       () => commonService().generateCode(tableName, columnName, prefix, defaults),
@@ -177,6 +177,12 @@ export const helperService = () => {
     });
   };
 
+  const checkUniqueCode = async (code: string, table: string, column: string, id: string | number) => {
+    const currentId = id || '';
+    const res = await commonService().checkExistCode(table, column, code, currentId);
+    return res[0].result !== 1;
+  };
+
   return {
     getCookie,
     getTenant,
@@ -187,6 +193,7 @@ export const helperService = () => {
     replaceItemAtIndex,
     findIndexItem,
     useGenerateCode,
-    uploadImageBase64
+    uploadImageBase64,
+    checkUniqueCode
   };
 };

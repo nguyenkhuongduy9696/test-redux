@@ -56,7 +56,7 @@ const NavBar = React.memo(({ data } : {data: any}) => {
 
   return (
     <>
-      <div className="w-full bg-white navbar flex items-center justify-between p-4">
+      <div className="w-full bg-white border-b flex items-center justify-between p-4">
         <div className='navbar-left'>
           <span className='cursor-pointer font-16 hover:text-gray-500'
             onClick={ () => setCollapsed(!collapsed) }>

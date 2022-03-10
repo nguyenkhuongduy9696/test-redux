@@ -19,7 +19,7 @@ import { permissionService } from '../services/permissionService';
 import { DashboardScreen, LeadScreen } from './lazyLoad';
 import RequireAuth from './RequireAuth';
 
-const RouteContainer = () => {
+const RouteContainer: React.FC = () => {
   const isFetching = useIsFetching();
   const navigate = useNavigate();
   const location = useLocation();

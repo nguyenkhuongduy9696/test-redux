@@ -12,7 +12,7 @@ import { helperService } from 'services/helperService';
 import { ACCESS_TOKEN, CURRENT_BRANCH } from './constants/localStorage';
 import '@progress/kendo-theme-bootstrap/dist/all.css';
 
-const App = () => {
+const App: React.FC = () => {
   const navigate = useNavigate();
   const tenant = helperService().getTenant();
   const token = helperService().getCookie(ACCESS_TOKEN);

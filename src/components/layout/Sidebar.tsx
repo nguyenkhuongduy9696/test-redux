@@ -12,7 +12,24 @@ import Avatar from 'assets/images/default-avatar.png';
 import Logo from 'assets/images/logo-crm.jpg';
 import LogoMini from 'assets/images/logo-mini.png';
 
-const Sidebar = React.memo(({ data } : {data: any}) => {
+interface subMenuItem {
+  id: number,
+  subIcon: any,
+  subTitle: string,
+  subPath: string
+}
+
+interface menuItem {
+  id: number,
+  icon: any,
+  title: string,
+  path: string,
+  subMenu: subMenuItem[]
+}
+
+const Sidebar: React.MemoExoticComponent<any> = React.memo((
+  { data } : {data: any}
+) => {
   const location = useLocation();
 
   const collapsed = useRecoilValue(sidebarCollapsed);
@@ -64,7 +81,7 @@ const Sidebar = React.memo(({ data } : {data: any}) => {
         {/* </li> */}
         <div className="h-full flex-1-1-auto menu">
           {
-            menu.map((item: any, index) => {
+            menu.map((item: menuItem, index) => {
               return (
                 <li className='nav-item menu-items' key={ index }>
                   <Link to={ item.subMenu.length > 0 ? '#' : item.path } >
@@ -87,7 +104,7 @@ const Sidebar = React.memo(({ data } : {data: any}) => {
                         <p className='px-4 pt-4 pb-0 font-bold single-menu-collapse'>{item.title}</p>
                         <ul className="nav flex-column sub-menu">
                           {
-                            item.subMenu.map((i: any) => {
+                            item.subMenu.map((i: subMenuItem) => {
                               return (
                                 <Link to={ i.subPath } key={ i.id } >
                                   <p className={ `nav-link sub ${i.subPath === location.pathname ? 'menu-active' : ''}` }>

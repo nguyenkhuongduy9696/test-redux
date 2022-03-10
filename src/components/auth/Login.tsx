@@ -17,7 +17,7 @@ import { helperService } from 'services/helperService';
 
 import RightBackground from 'assets/images/login-bg.jpg';
 
-type inputs = {
+interface inputs {
   username: string,
   password: string,
   branch_id: any

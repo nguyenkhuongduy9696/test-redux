@@ -22,5 +22,15 @@ export const commonService = () => {
     return data;
   };
 
-  return { generateCode, uploadImage };
+  const checkExistCode = async (table: string, column: string, value: string, id: string | number) => {
+    const { data } = await privateAxios.post('/common/check_exist_code', {
+      table: table,
+      column: column,
+      value: value,
+      id: id
+    });
+    return data.data;
+  };
+
+  return { generateCode, uploadImage, checkExistCode };
 };

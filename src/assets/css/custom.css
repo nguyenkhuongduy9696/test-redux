@@ -346,7 +346,7 @@ button, [role="button"] {
 
 .k-dialog-wrapper .k-dialog .k-window-content {
     padding: 0;
-    font-size: 14px;
+    font-size: 13px;
     color: var(--nv-text-primary);
 }
 .k-dialog-wrapper .k-dialog .k-window-content .k-dialog-body {
@@ -397,4 +397,32 @@ button, [role="button"] {
 .k-radio:focus {
     box-shadow: none!important;
     border-color: var(--nv-primary)!important;
+}
+
+
+/*Date picker*/
+.k-input {
+    font-size: 13px!important;
+}
+.k-input:focus-within {
+    border-color: var(--nv-primary)!important;
+    box-shadow: none!important;
+    color: var(--nv-text-primary)!important;
+}
+.k-input-button {
+    background-color: #ffffff!important;
+}
+.k-calendar .k-nav-today {
+    color: var(--nv-primary)!important;
+}
+.k-calendar .k-calendar-view .k-today .k-link {
+    box-shadow: inset 0 0 0 1px var(--nv-primary)!important;
+}
+.k-calendar .k-calendar-td.k-state-selected .k-link {
+    border-color: var(--nv-primary)!important;
+    background-color: var(--nv-primary)!important;
+}
+.k-calendar .k-calendar-td.k-state-selected.k-state-focused .k-link,
+.k-calendar .k-calendar-td.k-state-selected.k-state-focus .k-link {
+    box-shadow: none!important;
 }
